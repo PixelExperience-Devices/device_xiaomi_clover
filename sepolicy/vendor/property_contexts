@@ -17,6 +17,7 @@ cameradaemon.SaveMemAtBoot              u:object_r:vendor_default_prop:s0
 cpp.set.clock                           u:object_r:vendor_default_prop:s0
 disable.cpp.power.collapse              u:object_r:vendor_default_prop:s0
 persist.camera.                         u:object_r:vendor_default_prop:s0
+persist.camera.debug.logfile            u:object_r:persist_camera_prop:s0
 persist.vendor.camera.                  u:object_r:camera_prop:s0
 persist.camera.debug.                   u:object_r:persist_camera_prop:s0
 persist.camera.enable.log               u:object_r:persist_camera_prop:s0
