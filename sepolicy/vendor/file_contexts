@@ -78,6 +78,11 @@
 # Sockets
 /dev/socket/audio_hw_socket                                                                                                        u:object_r:audio_socket:s0
 
+# Tap to Wake
+/sys/devices/soc/c177000.i2c/i2c-3/3-005d/enable_dt2w u:object_r:sysfs_touchpanel:s0
+/sys/devices/soc/c177000.i2c/i2c-3/3-0038/enable_dt2w u:object_r:sysfs_touchpanel:s0
+/proc/touchscreen/enable_dt2w u:object_r:sysfs_touchpanel:s0
+
 # Thermal
 /data/vendor/thermal(/.*)?                                                                                                         u:object_r:thermal_data_file:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.mock                                                       u:object_r:hal_thermal_default_exec:s0
