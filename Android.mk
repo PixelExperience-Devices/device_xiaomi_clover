@@ -8,6 +8,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter tulip jasmine_sprout wayne clover lavender platina jason whyred,$(TARGET_DEVICE)),)
 
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := wifi_symlinks
@@ -156,11 +158,6 @@ $(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS)
-
-# Create symbolic links for msadp
-$(shell  mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
-	ln -sf /dev/block/bootdevice/by-name/msadp \
-	$(TARGET_OUT_VENDOR)/firmware/msadp)
 
 subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
 $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
