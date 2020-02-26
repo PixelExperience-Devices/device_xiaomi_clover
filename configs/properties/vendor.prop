@@ -152,6 +152,9 @@ vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
 debug.vds.allow_hwc=0
 
+# Fastbootd
+ro.fastbootd.available=true
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 

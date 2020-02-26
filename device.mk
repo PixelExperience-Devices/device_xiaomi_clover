@@ -169,6 +169,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
