@@ -1,1 +1,2 @@
 binder_call(mediaprovider, gpuservice)
+get_prop(mediaserver, exported_camera_prop)
