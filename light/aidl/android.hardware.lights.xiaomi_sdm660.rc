@@ -20,3 +20,4 @@ service vendor.light /vendor/bin/hw/android.hardware.lights-service.xiaomi_sdm66
     user system
     group system
     shutdown critical
+    writepid /dev/cpuset/system-background/tasks
