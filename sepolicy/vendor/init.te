@@ -20,3 +20,5 @@ allow init sysfs_leds: file { rw_file_perms };
 
 allow init sysfs:file { setattr };
 allow init debugfs_tracing_debug:dir { mounton };
+
+allow init system_file:file mounton;
