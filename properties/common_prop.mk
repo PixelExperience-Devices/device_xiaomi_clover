@@ -232,7 +232,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.wfc_avail_ovr=1 \
     persist.dbg.ims_volte_enable=1 \
     persist.debug.coresight.config=stm-events \
-    persist.radio.multisim.config=dsds \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.data.mode=concurrent \
     persist.vendor.dpmhalservice.enable=1 \
