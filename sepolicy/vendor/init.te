@@ -22,3 +22,8 @@ allow init sysfs:file { setattr };
 allow init debugfs_tracing_debug:dir { mounton };
 
 allow init system_file:file mounton;
+allow init {
+ vendor_configs_file
+ vendor_framework_file
+ vendor_app_file
+}:file mounton;
