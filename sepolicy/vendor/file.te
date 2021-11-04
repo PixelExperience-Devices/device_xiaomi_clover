@@ -25,3 +25,7 @@ type audio_socket, file_type;
 
 # Battery Saver
 type sysfs_battery_saver, fs_type, sysfs_type;
+
+# PowerHAL
+type proc_sched_energy_aware, proc_type, fs_type;
+
