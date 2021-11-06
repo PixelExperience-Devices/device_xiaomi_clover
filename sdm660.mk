@@ -583,6 +583,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/excluded-input-devices.xml
+
 # VNDK
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor_32 \
