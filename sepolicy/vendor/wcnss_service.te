@@ -1,4 +1,4 @@
-allow wcnss_service kmsg_device:chr_file w_file_perms;
+allow wcnss_service kmsg_device:chr_file { write open };
 allow wcnss_service proc_net:file r_file_perms;
 allow wcnss_service sysfs:file r_file_perms;
 allow wcnss_service sysfs_net:dir search;

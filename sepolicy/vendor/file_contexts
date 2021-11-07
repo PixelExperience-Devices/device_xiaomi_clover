@@ -11,9 +11,6 @@
 /dev/blkio(/.*)?                                                                                                                  u:object_r:blkio_dev:s0
 /dev/blkio/background(/.*)?                                                                                                       u:object_r:blkio_dev:s0
 
-# CNE
-/(vendor|system/vendor)/bin/mutualex                                                                                              u:object_r:vendor_mutualex_exec:s0
-
 # Executables
 /vendor/bin/sh                                                                                                                    u:object_r:vendor_shell_exec:s0
 
