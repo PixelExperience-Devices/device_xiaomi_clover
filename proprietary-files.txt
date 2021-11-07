@@ -86,9 +86,9 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4129558506dc078c03679ba362acda4755457742
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|dcfdc04b4e0c6e6a4ffa60e1694268bd0327e65c
 
-# ANT - from S62Pro RKQ1.210406.002
-vendor/lib/hw/com.dsi.ant@1.0-impl.so|079573a7412736b6f2da827d16cdd12d34a4f6a6
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so|87dc1a131534659173e71e108e7a3ffe6325845f
+# ANT - from LA.UM.9.1.r1-10900-SMxxx0.0
+vendor/lib/hw/com.dsi.ant@1.0-impl.so|d99ff0030ce14172d9d10e0b1f31b2d201aade10
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|0f8f5c3081d0ef745e0896b1fceea15f52fe3b21
 
 # ANT+ - from LA.UM.8.2.1.r1-05600-sdm660
 product/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so|fbbb33e875c9f64f0401e6cbcbac8e0c15766481
@@ -686,8 +686,8 @@ vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql|ee0756cfcfda2
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql|fccd99b4eee6c2e1762f56b812d7f5d4ca6ab182
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql|9c7e9a78f0890fb210d2eadbdd9c076cd3c43594
 
-# Radio - from S62Pro RKQ1.210406.002
-system_ext/framework/qti-telephony-common.jar|b56a247d21e72fc7b0b1d5882fb4d99041374dbd
+# Radio - from nubia NX659J 20201109.121337
+system_ext/framework/qti-telephony-common.jar|ac67728c317dc56f5a98f11e9f0fd526bf725755
 
 # Radio - IMS - from ginkgo V12.5.1.0.RCOCNXM
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice.xml|db25ef24f1937366d58a53b4f4b8923bc9e98d2d
@@ -766,8 +766,8 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|8555e548d142fad0238e74e57383bb5a65e
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|346a6f516637632cce8297f78227172d54d26040
 
-# Radio - IMS - from S62Pro RKQ1.210406.002
--system_ext/priv-app/ims/ims.apk|91c8e9b96882063769ef0a27ac9ea2627e8a8436
+# Radio - IMS - from nubia NX659J 20201109.121337
+-system_ext/priv-app/ims/ims.apk|3dae438ef192086a8913c06d24c055802c25f2a6
 
 # Sensors - from S62Pro RKQ1.210406.002
 -system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar|01d8f70b5687082dd9d19beca565a789d404837c
