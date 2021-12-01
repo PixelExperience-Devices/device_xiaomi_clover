@@ -159,6 +159,7 @@ camera.hal1.packagelist=com.android.camera,com.android.camera2,com.instagram.and
 vendor.camera.hal1.packagelist= com.android.camera,com.android.camera2,com.instagram.android
 
 # Media
+debug.media.transcoding.codec_max_operating_rate=120
 debug.stagefright.omx_default_rank=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.vidc.dec.enable.downscalar=1
