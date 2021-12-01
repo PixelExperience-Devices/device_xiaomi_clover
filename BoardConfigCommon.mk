@@ -94,14 +94,8 @@ TARGET_USES_QTI_CAMERA2CLIENT := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-# Charger
-HEALTHD_USE_BATTERY_INFO := true
-
 # Clang
 TARGET_KERNEL_CLANG_COMPILE := true
-
-# CNE and DPM
-BOARD_USES_QCNE := true
 
 # ConfigFS
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
@@ -186,9 +180,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 # Directory
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Peripheral manager
-TARGET_PER_MGR_ENABLED := true
-
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/properties/odm.prop
 TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/properties/system_ext.prop
@@ -220,12 +211,6 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
-
-# Timeservice
-BOARD_USES_QC_TIME_SERVICES := true
-
-# USB
-TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY := true
 
 # VNDK
 BOARD_VNDK_VERSION := current

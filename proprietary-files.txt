@@ -348,32 +348,22 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so|335cc2f4e263b4c20b2b7a
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|eaf70216b4e53f409c22764b272b79cd60a4b714
 
 # GPS - from LA.UM.9.6.2.r1-03300-89xx.0
--vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml|1c344aacaa6d17a1585ba58b2e6d438dcfe31fad
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
-vendor/bin/hw/android.hardware.gnss@2.1-service-qti|d458a2aadc1d00df4696d6793e550f4a9422a2c9
 vendor/bin/loc_launcher|684028ffab3ef293a241386710fe5855d2b2f70a
 vendor/bin/lowi-server|17ef4cb2ab94eb3364805ef93dfe4d5d8be9d044
 vendor/bin/slim_daemon|24b4fa2560fc967ee3f358aa51937f72377bfd7f
 vendor/bin/xtra-daemon|5759bc77d7848c7e087e0f5f59cdb67300ddd4bd
-vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc|d3844699c845ce5de4c8b50548a2095f92dd0235
-vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so|7db657be73603c41b73f7b96d86c824563fd206c
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so|4735a90e986bd707979451c50eabca3c381bb9fc
-vendor/lib64/libbatching.so|911f7bb81362578055529bd2302374f6ed076e32
 vendor/lib64/libcdfw.so|76c26b387a275ec9307bfef2bd77a53af875b951
 vendor/lib64/libcdfw_remote_api.so|751452d4d3aca9783e27226ba095a6c3e402937f
 vendor/lib64/libdataitems.so|026d7c55cc4aec0fa8c7bf5a9a4ee6ceedbefcd7
 vendor/lib64/libgdtap.so|85163b1852934848a64ac0c36cf03192b7871a57
-vendor/lib64/libgeofencing.so|849466a6fd9af1ec7a9925b938b62b713adef6ba
-vendor/lib64/libgnss.so|d7dd31ca11a03e556191d2d7f7ed783f380f410a
 vendor/lib64/libgnsspps.so|a936f15ea4ebe8f705300747c6ecc8150a0584e1
-vendor/lib64/libgps.utils.so|40f18cede8bb963d2023aa9ef698b52ba4d6c92b
 vendor/lib64/libizat_client_api.so|a82d387c3095f8b8c48d4e0e076c28412a752ecf
 vendor/lib64/libizat_core.so|b0cb0478ceb14554a5208d85e5c35ecf9d73937d
 vendor/lib64/liblbs_core.so|993d5f2169542bfbec193f962229fbd1c0779de5
 vendor/lib64/libloc_api_v02.so|5317059c6fec22f1492fad50da44976194c086d6
-vendor/lib64/libloc_core.so|4d917379910fe04072be2daf8f0e0cbc72767b41
 vendor/lib64/libloc_socket.so|a09d93e0868c9081aee6a532ccad88c1c682deb7
-vendor/lib64/liblocation_api.so|bd32d52dae25e1fc05c40a7de18e95a9a41f2ad7
 vendor/lib64/liblocationservice.so|3f6f69cb520d9f808409195b16951eb82b4f945a
 vendor/lib64/liblocationservice_glue.so|7b3acc64d7f3cc0c78d3164bf637115fd4bac90b
 vendor/lib64/liblowi_client.so|9db4ce5f62b6be6b3bf29199a36bdf7183606897
