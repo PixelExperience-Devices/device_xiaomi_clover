@@ -41,7 +41,6 @@ ro.qualcomm.cabl=0
 video.disable.ubwc=1
 vendor.display.disable_rotator_downscale=1
 debug.hwui.use_buffer_age=false
-debug.sf.recomputecrop=0
 
 # Surfaceflinger
 debug.sf.hw=1
@@ -106,8 +105,6 @@ persist.timed.enable=true
 
 # Radio
 DEVICE_PROVISIONED=1
-persist.sys.fflag.override.settings_network_and_internet_v2=true
-persist.sys.fflag.override.settings_provider_model=false
 persist.backup.ntpServer=0.pool.ntp.org
 persist.radio.aosp_usr_pref_sel=true
 persist.radio.add_power_save=1
