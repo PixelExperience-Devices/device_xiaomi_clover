@@ -6,11 +6,13 @@ on boot
     chown system system /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
     chown system system /sys/bus/platform/devices/soc:fpc1020/hw_reset
     chown system system /sys/bus/platform/devices/soc:fpc1020/device_prepare
+    chown system system /sys/bus/platform/devices/soc:fpc1020/compatible_all
     chown system system /data/misc/fpc/calibration_image.pndat
     chmod 0700 /sys/bus/platform/devices/soc:fpc1020/irq
     chmod 0700 /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
     chmod 0700 /sys/bus/platform/devices/soc:fpc1020/hw_reset
     chmod 0700 /sys/bus/platform/devices/soc:fpc1020/device_prepare
+    chmod 0700 /sys/bus/platform/devices/soc:fpc1020/compatible_all
     chmod 0600 /data/misc/fpc/calibration_image.pndat
 
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
