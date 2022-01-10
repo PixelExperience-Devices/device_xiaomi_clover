@@ -86,13 +86,11 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4129558506dc078c03679ba362acda4755457742
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|dcfdc04b4e0c6e6a4ffa60e1694268bd0327e65c
 
-# ANT - from LA.UM.9.1.r1-10900-SMxxx0.0
-vendor/lib/hw/com.dsi.ant@1.0-impl.so|d99ff0030ce14172d9d10e0b1f31b2d201aade10
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so|0f8f5c3081d0ef745e0896b1fceea15f52fe3b21
+# ANT - from S62Pro RKQ1.210406.002
+vendor/lib/hw/com.dsi.ant@1.0-impl.so|079573a7412736b6f2da827d16cdd12d34a4f6a6
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|87dc1a131534659173e71e108e7a3ffe6325845f
 
 # ANT+ - from LA.UM.8.2.1.r1-05600-sdm660
--lib/libantradio.so:system_ext/lib/libantradio.so|523f108cabe6c0a2a52fa4476ada8b65eacdd9a9
--lib64/libantradio.so:system_ext/lib64/libantradio.so|7b4e5ed251fa9e33960b58495f60de55c6739767
 product/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so|fbbb33e875c9f64f0401e6cbcbac8e0c15766481
 product/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so|1a7bee1627309c8eee55dab22b9f25c2302219ae
 vendor/lib/com.qualcomm.qti.ant@1.0.so|f7fb088a6fcc746b4b9f661010542b543a74b92f
