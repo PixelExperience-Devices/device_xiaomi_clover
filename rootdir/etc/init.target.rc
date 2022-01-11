@@ -496,6 +496,8 @@ service ppd /system/vendor/bin/mm-pp-dpps
 on property:sys.boot_completed=1
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
+    # Stop bootanimation
+    stop bootanim
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
