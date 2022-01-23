@@ -170,6 +170,8 @@ on post-fs-data
 
 on early-boot
     write /dev/ipa 1
+    # Enable charging led trigger
+    write /sys/class/leds/red/trigger battery-charging
 
 on boot
     start vendor.rmt_storage
