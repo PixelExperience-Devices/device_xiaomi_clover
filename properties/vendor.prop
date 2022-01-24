@@ -102,9 +102,6 @@ bt.max.hfpclient.connections=1
 ro.vendor.fm.use_audio_session=true
 vendor.hw.fm.init=0
 
-# BPF
-ro.kernel.ebpf.supported=true
-
 # Camera
 persist.vendor.camera.dual.isp.sync=0
 persist.vendor.camera.HAL3.enabled=1
