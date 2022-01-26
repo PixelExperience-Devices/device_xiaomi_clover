@@ -117,6 +117,12 @@ vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera
 # Codec2 switch
 debug.media.codec2=2
 
+# Crypto
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.volume.metadata.method=dm-default-key
+ro.crypto.volume.options=::v2
+
 # DRM
 drm.service.enabled=true
 
