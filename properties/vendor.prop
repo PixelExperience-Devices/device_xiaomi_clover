@@ -1,3 +1,6 @@
+# Adoptable Storage
+ro.crypto.volume.options=aes-256-xts
+
 # ART
 pm.dexopt.ab-ota=speed-profile
 dalvik.vm.dex2oat64.enabled=true
