@@ -117,10 +117,10 @@ void vendor_load_persist_properties()
 
     std::string hw_device;
 
-    char const *hw_id_file = "/sys/devices/platform/HardwareInfo/hw_id";
+    char const *hw_id_file = "/sys/devices/virtual/graphics/fb0/msm_fb_panel_info";
 
     ReadFileToString(hw_id_file, &hw_device);
-    if (hw_device.find("D9P") != std::string::npos) {
+    if (hw_device.find("NT51021_BOE_BOE10") != std::string::npos) {
         property_override("persist.sys.fp.vendor", "fpc");
         property_override("ro.board.variant", "d9p");
         property_override("vendor.display.lcd_density", "265");
