@@ -138,7 +138,6 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     libhdmiedid \
     libhfp \
-    libldacBT_dec \
     libsndmonitor
 
 # Boot animation
