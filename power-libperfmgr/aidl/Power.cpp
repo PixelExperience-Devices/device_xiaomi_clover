@@ -119,14 +119,14 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
+                endAllHints(mHintManager);
                 mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+            } else {
+                mHintManager->EndHint("SUSTAINED_PERFORMANCE");
             }
-            mSustainedPerfModeOn = true;
+            mSustainedPerfModeOn = enabled;
             break;
         case Mode::LAUNCH:
-            if (mSustainedPerfModeOn) {
-                break;
-            }
             [[fallthrough]];
         case Mode::FIXED_PERFORMANCE:
             [[fallthrough]];
@@ -141,7 +141,9 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
         case Mode::AUDIO_STREAMING_LOW_LATENCY:
             [[fallthrough]];
         default:
-            if (mBatterySaverOn) break;
+            if (mBatterySaverOn || mSustainedPerfModeOn) {
+                break;
+            }
             if (enabled) {
                 mHintManager->DoHint(toString(type));
             } else {
