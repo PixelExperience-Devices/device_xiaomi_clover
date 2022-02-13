@@ -109,6 +109,7 @@ ro.kernel.ebpf.supported=true
 persist.vendor.camera.dual.isp.sync=0
 persist.vendor.camera.HAL3.enabled=1
 persist.vendor.camera.exif.make=Xiaomi
+persist.vendor.camera.perflock.enable=0
 vendor.camera.aux.packageblacklist=com.discord
 camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
 vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
