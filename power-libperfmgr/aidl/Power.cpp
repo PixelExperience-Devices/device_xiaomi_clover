@@ -60,6 +60,7 @@ Power::Power(std::shared_ptr<HintManager> hm)
     : mHintManager(hm),
       mInteractionHandler(nullptr),
       mSustainedPerfModeOn(false),
+      mBatterySaverOn(false),
       mAdpfRateNs(
               ::android::base::GetIntProperty(kPowerHalAdpfRateProp, kPowerHalAdpfRateDefault)) {
     mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
@@ -90,6 +91,12 @@ Power::Power(std::shared_ptr<HintManager> hm)
     LOG(INFO) << "PowerHAL ready to take hints, Adpf update rate: " << mAdpfRateNs;
 }
 
+void endAllHints(std::shared_ptr<HintManager> mHintManager) {
+    for (std::string hint: mHintManager->GetHints()) {
+        mHintManager->EndHint(hint);
+    }
+}
+
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(DEBUG) << "Power setMode: " << toString(type) << " to: " << enabled;
     ATRACE_INT(toString(type).c_str(), enabled);
@@ -102,6 +109,13 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             [[fallthrough]];
             }
         case Mode::LOW_POWER:
+            if (enabled) {
+                endAllHints(mHintManager);
+                mHintManager->DoHint("LOW_POWER");
+            } else {
+                mHintManager->EndHint("LOW_POWER");
+            }
+            mBatterySaverOn = enabled;
             break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
@@ -127,6 +141,7 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
         case Mode::AUDIO_STREAMING_LOW_LATENCY:
             [[fallthrough]];
         default:
+            if (mBatterySaverOn) break;
             if (enabled) {
                 mHintManager->DoHint(toString(type));
             } else {
@@ -154,7 +169,7 @@ ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
     ATRACE_INT(toString(type).c_str(), durationMs);
     switch (type) {
         case Boost::INTERACTION:
-            if (mSustainedPerfModeOn) {
+            if (mSustainedPerfModeOn || mBatterySaverOn) {
                 break;
             }
             mInteractionHandler->Acquire(durationMs);
@@ -166,7 +181,7 @@ ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
         case Boost::AUDIO_LAUNCH:
             [[fallthrough]];
         default:
-            if (mSustainedPerfModeOn) {
+            if (mSustainedPerfModeOn || mBatterySaverOn) {
                 break;
             }
             if (durationMs > 0) {
