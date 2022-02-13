@@ -8,6 +8,7 @@
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM := sdm660
+TARGET_USES_UM_4_19 := true
 OVERRIDE_QCOM_HARDWARE_VARIANT := sdm660
 
 # Inherit from those products. Most specific first.
