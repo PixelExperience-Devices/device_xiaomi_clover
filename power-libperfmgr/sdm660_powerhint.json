@@ -139,6 +139,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "KernelBatterySaver",
+      "Path": "/sys/module/battery_saver/parameters/enabled",
+      "Values": [
+        "Y",
+        "N"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -423,6 +432,12 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "2,3"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "KernelBatterySaver",
+      "Duration": 0,
+      "Value": "Y"
     },
     {
       "PowerHint": "Flipendo",
