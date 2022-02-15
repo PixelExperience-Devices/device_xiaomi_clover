@@ -29,6 +29,16 @@ video.disable.ubwc                          u:object_r:vendor_camera_prop:s0
 # Dirac
 persist.audio.dirac.                    u:object_r:dirac_prop:s0
 
+# Camera IDs
+persist.camera.module.info                  u:object_r:vendor_camera_prop:s0
+persist.camera.module.infoext               u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.mi.module.info        u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.mi.module.infoext     u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.mi.module.infoext2    u:object_r:vendor_camera_prop:s0
+
+# Display
+ro.vendor.display.type                  u:object_r:vendor_display_prop:s0
+
 # Fingerprint
 fpc_kpi                                 u:object_r:vendor_default_prop:s0
 gf.debug.dump_data                      u:object_r:vendor_default_prop:s0
@@ -40,6 +50,9 @@ sys.fp.                                 u:object_r:hal_fingerprint_prop:s0
 
 # Hall wakeup
 persist.service.folio_daemon            u:object_r:system_prop:s0
+
+# Hardware
+ro.hardware.chipname                    u:object_r:exported_default_prop:s0
 
 # Media
 gpu.stats.debug.level                   u:object_r:vendor_default_prop:s0
