@@ -108,6 +108,7 @@
         <item>348.05453</item>  <!-- 2981-5000 -->
         <item>420</item>  <!-- 5000+ -->
     </array>
+
     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
          This array should be equal in size to config_screenBrightnessBacklight. -->
@@ -655,13 +656,17 @@
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">6</integer>
 
-    <!-- Default screen brightness setting.
-         Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">98</integer>
+    <!-- Minimum screen brightness setting allowed by power manager.
+         The user is forbidden from setting the brightness below this level.-->
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.0</item>
 
-    <!-- Minimum screen brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+    <!-- Maximum screen brightness allowed by the power manager.
+         The user is forbidden from setting the brightness above this level.-->
+    <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1.0</item>
+
+    <!-- Default screen brightness setting set.
+         Must be in the range specified by minimum and maximum.-->
+    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.3843137</item>
 
     <!-- Buttom brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness. -->
@@ -715,7 +720,7 @@
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
-    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+    <bool name="config_allowAutoBrightnessWhileDozing">false</bool>
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
