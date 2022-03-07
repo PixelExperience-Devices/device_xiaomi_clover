@@ -144,6 +144,10 @@ PRODUCT_PACKAGES += \
 # Boot animation
 TARGET_BOOTANIMATION_SIZE := 1080p
 
+# Call recording
+PRODUCT_PACKAGES += \
+    com.google.android.apps.dialer.call_recording_audio.features.xml
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.5 \
