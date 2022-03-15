@@ -465,6 +465,18 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
+service folio_daemon /system/bin/folio_daemon
+    class late_start
+    user system
+    group system uhid
+    disabled
+
+on property:persist.service.folio_daemon=0
+    stop folio_daemon
+ 
+on property:persist.service.folio_daemon=1
+    start folio_daemon
+
 service ppd /system/vendor/bin/mm-pp-dpps
     class late_start
     user system
