@@ -679,8 +679,8 @@ vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql|ee0756cfcfda2
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql|fccd99b4eee6c2e1762f56b812d7f5d4ca6ab182
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql|9c7e9a78f0890fb210d2eadbdd9c076cd3c43594
 
-# Radio - from nubia NX659J 20201109.121337
-system_ext/framework/qti-telephony-common.jar|ac67728c317dc56f5a98f11e9f0fd526bf725755
+# Radio - from S62Pro RKQ1.210406.002
+system_ext/framework/qti-telephony-common.jar|b56a247d21e72fc7b0b1d5882fb4d99041374dbd
 
 # Radio - IMS - from ginkgo V12.5.1.0.RCOCNXM
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice.xml|db25ef24f1937366d58a53b4f4b8923bc9e98d2d
@@ -759,8 +759,8 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|8555e548d142fad0238e74e57383bb5a65e
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|346a6f516637632cce8297f78227172d54d26040
 
-# Radio - IMS - from nubia NX659J 20201109.121337
--system_ext/priv-app/ims/ims.apk|3dae438ef192086a8913c06d24c055802c25f2a6
+# Radio - IMS - from S62Pro RKQ1.210406.002
+-system_ext/priv-app/ims/ims.apk|91c8e9b96882063769ef0a27ac9ea2627e8a8436
 
 # Sensors - from S62Pro RKQ1.210406.002
 -system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar|01d8f70b5687082dd9d19beca565a789d404837c
