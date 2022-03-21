@@ -149,11 +149,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6 \
     vendor.qti.hardware.camera.device@1.0
 
-# Codec2 modules
-PRODUCT_PACKAGES += \
-    com.android.media.swcodec \
-    libsfplugin_ccodec
-
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -327,13 +322,22 @@ PRODUCT_PACKAGES += \
     android.hardware.lights-service.xiaomi_sdm660
 
 # Media
+PRODUCT_PACKAGES += \
+    libgui_vendor
+
+# Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(COMMON_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
     $(COMMON_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
     $(COMMON_PATH)/configs/media/media_codecs_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_sdm660_v1.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
     $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_performance_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_sdm660_v1.xml
+    $(COMMON_PATH)/configs/media/media_codecs_performance_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_sdm660_v1.xml \
+    $(COMMON_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_sdm660_v1.xml \
+    $(COMMON_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
+    $(COMMON_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    $(COMMON_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_sdm660_v1.xml \
+    $(COMMON_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
 
 # Media Google
 PRODUCT_COPY_FILES += \
@@ -345,15 +349,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
-# Media Extensions
-PRODUCT_PACKAGES += \
-    libavmediaserviceextensions \
-    libmediametrics \
-    libregistermsext \
-    mediametrics
-
 # OMX
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.1.vendor \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libc2dcolorconvert \
