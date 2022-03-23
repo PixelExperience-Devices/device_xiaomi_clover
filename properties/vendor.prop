@@ -157,22 +157,8 @@ camera.hal1.packagelist=com.android.camera,com.android.camera2,com.instagram.and
 vendor.camera.hal1.packagelist= com.android.camera,com.android.camera2,com.instagram.android
 
 # Media
-debug.media.transcoding.codec_max_operating_rate_720P=240
-debug.media.transcoding.codec_max_operating_rate_1080P=120
 debug.stagefright.omx_default_rank=0
-media.stagefright.thumbnail.prefer_hw_codecs=true
-vidc.dec.enable.downscalar=0
-vendor.vidc.dec.enable.downscalar=0
-vendor.vidc.enc.disable.pq=false
-vendor.vidc.enc.disable_bframes=1
 vidc.enc.dcvs.extra-buff-count=2
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.aac_51_output_enabled=true
-mm.enable.smoothstreaming=true
-vidc.enc.target_support_bframe=1
-vendor.mm.enable.qcom_parser=13631487
-vendor.video.disable.ubwc=1
 ro.media.recorder-max-base-layer-fps=60
 
 # Misc
