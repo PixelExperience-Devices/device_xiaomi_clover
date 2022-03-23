@@ -234,6 +234,9 @@ PRODUCT_PACKAGES += \
     libbatching \
     libgeofencing \
     libgnss \
+    libgps.utils \
+    libloc_core \
+    liblocation_api \
     libwifi-hal-ctrl
 
 # GPS Config
