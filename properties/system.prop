@@ -42,7 +42,7 @@ renderthread.skia.reduceopstasksplitting=true
 ro.qualcomm.cabl=0
 video.disable.ubwc=1
 vendor.display.disable_rotator_downscale=1
-vendor.display.disable_scaler=1
+vendor.display.disable_scaler=0
 debug.hwui.use_buffer_age=false
 
 # Surfaceflinger
