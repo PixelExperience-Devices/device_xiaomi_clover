@@ -30,6 +30,9 @@ persist.vendor.data.profile_update=true
 # Disable GC freed lines
 dalvik.vm.debug.alloc=0
 
+# Disable vsync for cpu rendered apps
+debug.cpurend.vsync=false
+
 # Display
 debug.performance.tuning=1
 debug.renderengine.backend=skiaglthreaded
