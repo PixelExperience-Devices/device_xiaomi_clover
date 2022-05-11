@@ -134,7 +134,6 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     libhdmiedid \
     libhfp \
-    libldacBT_bco \
     libldacBT_dec \
     libsndmonitor
 
