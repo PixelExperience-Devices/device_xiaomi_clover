@@ -57,40 +57,27 @@
     },
     {
       "Name": "GPUMaxFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
+      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
       "Values": [
-        "0",
-        "1",
-        "2",
-        "3"
-      ],
-      "Comments": [
-        "0 => 647000000",
-        "1 => 588000000",
-        "2 => 465000000",
-        "3 => 370000000"
+        "647000000",
+        "588000000",
+        "465000000",
+        "370000000",
+        "266000000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
       "Name": "GPUMinFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
+      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
       "Values": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "Comments": [
-        "0 => 647000000",
-        "1 => 588000000",
-        "2 => 465000000",
-        "3 => 370000000",
-        "4 => 266000000",
-        "5 => 160000000"
+        "647000000",
+        "588000000",
+        "465000000",
+        "370000000",
+        "266000000",
+        "160000000"
       ],
       "ResetOnInit": true
     },
@@ -266,7 +253,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "3"
+      "Value": "465000000"
     },
     {
       "PowerHint": "INTERACTION",
@@ -482,13 +469,13 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "647000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "647000000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -536,13 +523,13 @@
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "647000000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "0"
+      "Value": "647000000"
     }
   ]
 }
