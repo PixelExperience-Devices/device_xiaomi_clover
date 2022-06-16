@@ -26,3 +26,6 @@ dontaudit vendor_pd_mapper self:capability sys_admin;
 dontaudit vendor_toolbox self:capability sys_admin;
 dontaudit vold_prepare_subdirs self:capability sys_admin;
 
+# Neverallow: no domain should be allowed to ptrace init 
+# at system/sepolicy/public/init.te
+dontaudit crash_dump init:process ptrace;
