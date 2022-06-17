@@ -548,10 +548,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
 
-# System
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.binary_xml=false
-
 # Task profiles
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/task_profiles/cgroups_26.json:$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles/cgroups_26.json \
