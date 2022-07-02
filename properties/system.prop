@@ -1,3 +1,7 @@
+# ART
+ro.vendor.qti.am.reschedule_service=true
+ro.sys.fw.dex2oat_thread_count=8
+
 # Audio
 audio.safemedia.bypass=true
 audio.offload.min.duration.secs=30
@@ -6,15 +10,18 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 
-# Bluetooth
+# Bluetooth & FM
 persist.vendor.bt.a2dp_offload_cap=sbc-aac-aptx-aptxhd-ldac
 vendor.bluetooth.soc=cherokee
+bt.max.hfpclient.connections=1
+vendor.hw.fm.init=0
 
 # Blur
 ro.surface_flinger.supports_background_blur=0
 
 # Camera
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
 
 # Charger
 ro.charger.enable_suspend=true
@@ -49,6 +56,9 @@ renderthread.skia.reduceopstasksplitting=true
 ro.qualcomm.cabl=0
 sdm.debug.disable_skip_validate=1
 
+# DPM
+persist.vendor.dpm.loglevel=0
+
 # Surfaceflinger
 debug.sf.hw=1
 debug.sf.enable_hwc_vds=0
@@ -67,6 +77,13 @@ persist.sys.fuse.passthrough.enable=true
 
 # Gboard
 ro.com.google.ime.kb_pad_port_b=1
+
+# GPS
+persist.backup.ntpServer="0.pool.ntp.org"
+persist.vendor.overlay.izat.optin=rro
+
+# HAL1 app list
+camera.hal1.packagelist=com.android.camera,com.android.camera2,com.instagram.android
 
 # IMS
 persist.vendor.ims.disableUserAgent=0
@@ -95,6 +112,7 @@ media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 mmp.enable.3g2=true
 persist.mm.enable.prefetch=true
+ro.media.recorder-max-base-layer-fps=60
 vidc.dec.enable.downscalar=0
 vidc.enc.target_support_bframe=1
 vendor.mm.enable.qcom_parser=16777213
@@ -102,6 +120,8 @@ vendor.vidc.dec.enable.downscalar=0
 vendor.vidc.enc.disable_bframes=1
 vendor.vidc.enc.disable.pq=false
 
+# Misc
+ro.vendor.qti.sys.fw.bservice_enable=true
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
 
@@ -122,6 +142,7 @@ persist.radio.VT_CAM_INTERFACE=2
 persist.radio.data_con_rprt=1
 persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableIMSLogs=1
+persist.vendor.qti.telephony.vt_cam_interface=2
 persist.vendor.radio.enable_temp_dds=true
 persist.vendor.radio.force_on_dc=true
 ril.subscription.types=RUIM
@@ -131,6 +152,9 @@ ro.build.selinux=1
 
 #Storaged
 ro.storaged.event.interval=99999
+
+# System restart
+ro.build.shutdown_timeout=2
 
 # Zygote preforking
 persist.device_config.runtime_native.usap_pool_enabled=true
