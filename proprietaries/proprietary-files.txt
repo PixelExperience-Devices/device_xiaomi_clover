@@ -783,15 +783,10 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so|2ef4dcdc5c3c93e757bbcb3ce7db1375f
 vendor/lib64/vendor.qti.esepowermanager@1.1.so|9722d849e3fc38ba3aa7828cd47133856eb82cd0
 
 # Fingerprint sensor - from clover-user 8.1.0 OPM1.171019.019 9.8.29 release-keys
--vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|835e5b95c6167f3bf7424798e401746b7f7d8d9a
--vendor/app/QFingerprintService/QFingerprintService.apk|9943ffb17cd481bd965f46d5eaee03bf9ac0a20c
-vendor/bin/qfp-daemon|df9caee9a4e5601e7be420d3513ba14d00745046
 vendor/etc/permissions/com.fingerprints.extension.xml|de711d8827e1d321b22b60fd75a204e8928f9c6d
 vendor/framework/com.fingerprints.extension.jar|7bf0e77e9c10c997377b1498c040c3309ebe1c57
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so|fba7b8e326cf869abae568e62383dddb094614f7
 vendor/lib64/hw/fingerprint.fpc.default.so|03daec42a3bbb05da597df345e8adb341bf52789
 vendor/lib64/com.fingerprints.extension@1.0.so|9ea363fa26db941aed44f7ef53337db8612b840e
-vendor/lib64/libqfp-service.so|643fa8cfaaf3fc9361c9a3ba2f920b681dcb76b4
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so|3f116c79fee2a676b091f5fb263af4d834d693fb
 
 # FM - from Honeywell/hon660/hon660:12/94.00.03/0037:user/release-keys
