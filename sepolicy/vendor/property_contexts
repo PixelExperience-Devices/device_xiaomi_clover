@@ -4,6 +4,7 @@ audio.sys.offload.pstimeout.secs        u:object_r:vendor_default_prop:s0
 audio_hal.in_period_size                u:object_r:vendor_default_prop:s0
 audio_hal.period_multiplier             u:object_r:vendor_default_prop:s0
 persist.audio.fluence.voicecomm         u:object_r:vendor_default_prop:s0
+ro.audio.usb.period_us                  u:object_r:vendor_default_prop:s0
 
 # Camera
 camera.clientname                           u:object_r:vendor_camera_prop:s0
