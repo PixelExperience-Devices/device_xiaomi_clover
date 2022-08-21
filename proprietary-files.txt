@@ -460,6 +460,10 @@ vendor/lib64/libkeymasterdeviceutils.so|6fd0b0e1b30c4e6c5272794896306596880c657b
 vendor/lib64/libkeymasterprovision.so|d6c95d3543c707df133d50764f647e5f07adb82b
 vendor/lib64/libkeymasterutils.so|a642ac1202ddddbf62917b6450fa3d7eaf622b6a
 
+# Listen -  from jasmine V11.0.23.0.QDIMIXM
+vendor/lib/hw/sound_trigger.primary.sdm660.so|8bae35ddf095f33543413bec940f538a7fada63b
+vendor/lib64/hw/sound_trigger.primary.sdm660.so|2989053c3d24dc7b1ca9c26e33be602179dde614
+
 # Listen - from LA.UM.10.2.1.r1-03400-sdm660.0-kunmun
 vendor/lib/libadpcmdec.so|b3ec2cc197b682aa6ae7e1da9c8f25cc1aa75750
 vendor/lib/libgcs-calwrapper.so|a42c20f41b130f65b3530cfbd7a4da95e54b0657
