@@ -6,3 +6,5 @@ get_prop(system_server, vendor_persist_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
 get_prop(system_server, exported_camera_prop)
+
+allow system_server system_file:file { ioctl };
