@@ -545,7 +545,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel
 
 # System
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.sys.binary_xml=false
 
 # Task profiles
