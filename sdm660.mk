@@ -596,9 +596,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor_32  \
     com.android.vndk.current.on_vendor
 
-# VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
-
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
