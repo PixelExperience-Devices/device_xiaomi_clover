@@ -1,0 +1,2 @@
+# Fix OTA with encrypted F2FS userdata
+allow uncrypt self:capability { sys_admin fowner };
