@@ -1,0 +1,7 @@
+dontaudit boringssl_self_test self:capability sys_admin;
+dontaudit fsck self:capability kill;
+dontaudit fsverity_init self:capability sys_admin;
+dontaudit kernel self:capability kill;
+dontaudit linkerconfig self:capability { kill sys_admin };
+dontaudit odsign self:capability sys_admin;
+dontaudit vendor_boringssl_self_test self:capability sys_admin;

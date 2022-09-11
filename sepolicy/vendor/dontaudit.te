@@ -1,3 +1,28 @@
 # Apps are no longer allowed open access to /dev/ashmem, unless they
 # target API level < Q.
 dontaudit untrusted_app ashmem_device:chr_file open;
+
+dontaudit adbd self:capability sys_admin;
+dontaudit blkid_untrusted self:capability sys_admin;
+dontaudit crash_dump self:capability sys_admin;
+dontaudit fsck self:capability sys_admin;
+dontaudit hal_power_default self:capability sys_admin;
+dontaudit hal_wifi_supplicant_default self:capability sys_admin;
+dontaudit installd self:capability kill;
+dontaudit irsc_util self:capability sys_admin;
+dontaudit lmkd self:capability sys_admin;
+dontaudit netutils_wrapper self:capability sys_admin;
+dontaudit rfs_access self:capability sys_admin;
+dontaudit rmt_storage self:capability sys_admin;
+dontaudit thermal-engine self:capability sys_admin;
+dontaudit toolbox self:capability { kill sys_admin };
+dontaudit ueventd self:capability sys_admin;
+dontaudit usbd self:capability sys_admin;
+dontaudit vdc self:capability sys_admin;
+dontaudit vendor_init-qti-dcvs-sh self:capability sys_admin;
+dontaudit vendor_modprobe self:capability sys_admin;
+dontaudit vendor_msm_irqbalanced self:capability sys_admin;
+dontaudit vendor_pd_mapper self:capability sys_admin;
+dontaudit vendor_toolbox self:capability sys_admin;
+dontaudit vold_prepare_subdirs self:capability sys_admin;
+
