@@ -85,6 +85,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     audio.usbv2.default \
+    liba2dpoffload \
     libaudio-resampler \
     libhdmiedid \
     libhfp \
@@ -93,7 +94,6 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener\
-    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Audio Configs
 PRODUCT_COPY_FILES += \
@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService-Soong \
+    AntHalService \
     com.dsi.ant@1.0.vendor
 
 # AuthSecret
@@ -132,10 +132,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio-impl \
-    libbthost_if \
-    libhdmiedid \
-    libhfp \
-    libsndmonitor
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Boot animation
 TARGET_BOOTANIMATION_SIZE := 1080p
