@@ -99,6 +99,12 @@ camera.hal1.packagelist=com.android.camera,com.android.camera2,com.instagram.and
 # IMS
 persist.vendor.ims.disableUserAgent=0
 
+# Iorapd
+ro.iorapd.enable=false
+iorapd.perfetto.enable=false
+iorapd.readahead.enable=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
 # LMKD
 ro.lmk.log_stats=true
 ro.lmk.use_psi=false
