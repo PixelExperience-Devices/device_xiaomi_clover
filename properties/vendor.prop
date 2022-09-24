@@ -139,9 +139,6 @@ vendor.video.disable.ubwc=1
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
-# Fwk detect
-ro.vendor.qti.va_aosp.support=1
-
 # Graphics
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
