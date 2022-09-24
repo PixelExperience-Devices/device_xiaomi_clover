@@ -30,7 +30,7 @@ persist.vendor.mwqem.enable                 u:object_r:vendor_camera_prop:s0
 ro.camera.req.fmq.size                      u:object_r:vendor_camera_prop:s0
 ro.camera.res.fmq.size                      u:object_r:vendor_camera_prop:s0
 sys.camera                                  u:object_r:hal_camera_prop:s0
-sys.camera.miui.apk                         u:object_r:vendor_camera_prop:s0
+sys.camera.miui.apk                         u:object_r:system_prop:s0
 ubwc.no.compression                         u:object_r:vendor_camera_prop:s0
 vendor.camera.                              u:object_r:vendor_camera_prop:s0
 vendor.camera.eis.gyro_name                 u:object_r:vendor_camera_prop:s0
