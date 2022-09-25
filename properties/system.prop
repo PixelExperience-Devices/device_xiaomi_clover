@@ -15,6 +15,7 @@ persist.vendor.bt.a2dp_offload_cap=sbc-aac-aptx-aptxhd
 vendor.bluetooth.soc=cherokee
 bt.max.hfpclient.connections=1
 vendor.hw.fm.init=0
+ro.bluetooth.wipower=false
 
 # Blur
 ro.surface_flinger.supports_background_blur=0
