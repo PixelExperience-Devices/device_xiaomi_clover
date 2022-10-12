@@ -740,12 +740,10 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|346a6f516637632cce8297
 system_ext/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|4307a6f48c60076d2c8fa688cb699f3aceddc4f8
 system_ext/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|00569f4022ccdd8fc2e01ed515a9035604abfbed
 vendor/bin/sensors.qti|4a9d9a0c6f7269b265f7800fcbdd48bf3e925b93
-vendor/lib/hw/activity_recognition.sdm660.so|b81d49cb6781f2255188efeca0965f2c645cf3ac
 vendor/lib/libsensor1.so|c247730400d71e6c1b67626d2109cf52c9a57da1
 vendor/lib/libsensor_reg.so|8fc19423b5b39b0518c271b5ed5d8115e1ebdc50
 vendor/lib/libssc_default_listener.so|c2a4f8f176c7df5cafbabde476e022acf71b4df6
 vendor/lib/sensor_calibrate.so|8fe40dfb1f10d6486b60f2a99e21e0fcf7344318
-vendor/lib64/hw/activity_recognition.sdm660.so|a21e1daa7a0f2dd111a9d9539602cd09580f69c8
 vendor/lib64/libsensor1.so|99405c9be06abaa21d29f16f6a30e8af154a9193
 vendor/lib64/libsensor_reg.so|b18e116898180bc196374ca76390e78e4a295dcb
 vendor/lib64/libssc_default_listener.so|32362d1d20fe76de96daea735787d1f6ef8c2dd4
