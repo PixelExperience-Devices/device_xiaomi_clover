@@ -65,6 +65,9 @@ persist.service.folio_daemon            u:object_r:system_prop:s0
 
 # Hardware
 ro.hardware.chipname                    u:object_r:exported_default_prop:s0
+ro.board.variant                        u:object_r:exported_default_prop:s0
+ro.hwversion                            u:object_r:exported_default_prop:s0
+persist.vendor.slm.enable               u:object_r:exported_default_prop:s0
 
 # Media
 gpu.stats.debug.level                   u:object_r:vendor_default_prop:s0
