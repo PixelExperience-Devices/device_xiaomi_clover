@@ -75,4 +75,7 @@
 
     <!-- Indicate the device support request channel on Wi-Fi Aware data-path. -->
     <bool name="config_wifiSupportChannelOnDataPath">true</bool>
+
+    <!-- Enable WPA2 to WPA3 auto-upgrade -->
+    <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 </resources>
