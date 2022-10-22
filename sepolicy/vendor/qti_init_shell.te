@@ -6,6 +6,7 @@ allow qti_init_shell self:perf_event cpu;
 allow qti_init_shell sysfs:file { setattr write };
 allow qti_init_shell qti_init_shell:perf_event { cpu };
 allow qti_init_shell persist_file:lnk_file read;
+allow qti_init_shell proc_watermark_scale_factor:file rw_file_perms;
 
 dontaudit qti_init_shell system_prop:property_service set;
 dontaudit qti_init_shell self:capability { dac_override dac_read_search };
