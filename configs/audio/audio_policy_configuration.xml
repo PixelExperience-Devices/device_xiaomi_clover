@@ -258,7 +258,7 @@
                 <route type="mix" sink="Earpiece"
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,BT SCO Headset Mic"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,BT SCO Headset Mic,Telephony Rx"/>
+                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,BT SCO Headset Mic,Telephony Rx,immersive_out"/>
                 <route type="mix" sink="Wired Headset"
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,dsd_compress_passthrough,BT SCO Headset Mic,Telephony Rx,immersive_out"/>
                 <route type="mix" sink="Wired Headphones"
