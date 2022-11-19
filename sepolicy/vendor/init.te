@@ -1,3 +1,6 @@
+get_prop(init, exported_default_prop)
+allow init logdump_partition:lnk_file relabelto;
+
 allow init adsprpcd_file:file mounton;
 allow init apex_metadata_file:lnk_file read;
 allow init socket_device:sock_file { unlink setattr create };
