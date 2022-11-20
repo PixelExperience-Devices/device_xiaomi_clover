@@ -11,6 +11,7 @@ COMMON_PATH := device/xiaomi/sdm660-common
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := sdm660
 OVERRIDE_QCOM_HARDWARE_VARIANT := sdm660
+BOARD_VENDOR := xiaomi
 
 # A/B
 ifeq ($(ENABLE_AB), true)

@@ -1,17 +1,15 @@
+//
+// Copyright (C) 2021-2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
 cc_library_shared {
     name: "libqti-perfd-client",
-    proprietary: true,
-    defaults: ["hidl_defaults"],
-    srcs: [
-        "client.c",
-    ],
-    cflags: [
-        "-Werror",
-        "-Wextra",
-        "-Wall",
-    ],
+    vendor: true,
+    srcs: ["client.c"],
     shared_libs: [
-        "libutils",
         "liblog",
+        "libutils",
     ],
 }
