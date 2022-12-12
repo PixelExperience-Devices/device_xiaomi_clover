@@ -34,7 +34,6 @@ sys.camera.miui.apk                         u:object_r:system_prop:s0
 ubwc.no.compression                         u:object_r:vendor_camera_prop:s0
 vendor.camera.                              u:object_r:vendor_camera_prop:s0
 vendor.camera.eis.gyro_name                 u:object_r:vendor_camera_prop:s0
-vendor.camera.skip_unconfigure.packagelist  u:object_r:vendor_camera_prop:s0
 vidc.enc.dcvs.extra-buff-count              u:object_r:vendor_camera_prop:s0
 video.disable.ubwc                          u:object_r:vendor_camera_prop:s0
 
