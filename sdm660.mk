@@ -382,6 +382,15 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay
 
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    DialerOverlay \
+    FrameworksOverlay \
+    SettingsOverlay \
+    SettingsProviderOverlay \
+    SystemUIOverlay \
+    TelephonyOverlay
+
 # RRO configuration
 TARGET_USES_RRO := true
     
