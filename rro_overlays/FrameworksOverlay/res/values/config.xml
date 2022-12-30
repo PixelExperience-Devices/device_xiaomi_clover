@@ -791,9 +791,6 @@
         provisioning, availability etc -->
    <bool name="config_carrier_wfc_ims_available">true</bool>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
-
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
@@ -976,26 +973,8 @@
          to have a confirmed way to dismiss the keyboard when desired. -->
     <bool name="config_automotiveHideNavBarForKeyboard">true</bool>
 
-    <!-- The list of components which should be automatically disabled for a specific device. -->
-    <string-array name="config_deviceDisabledComponents" translatable="false">
-        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
-        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
-        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
-    </string-array>
-
     <!-- Configuration to enable non-default PDP during IWLAN -->
     <bool name="config_feature_iwlan_enabled">true</bool>
-
-    <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
-     empty string is passed in -->
-    <string translatable="false" name="config_wlan_data_service_package">vendor.qti.iwlan</string>
-
-    <!-- IWLAN network service package name to bind to by default. If none is specified in an overlay, an
-     empty string is passed in -->
-    <string translatable="false" name="config_wlan_network_service_package">vendor.qti.iwlan</string>
-
-    <!-- Telephony qualified networks service package name to bind to by default. -->
-    <string translatable="false" name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
     <!-- Specify custom blanking delay of the display -->
     <integer name="config_screen_off_delay">0</integer>
