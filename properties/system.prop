@@ -59,7 +59,6 @@ sdm.debug.disable_skip_validate=1
 persist.vendor.dpm.loglevel=0
 
 # Surfaceflinger
-debug.hwui.use_buffer_age=false
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=27600000
 debug.sf.late.app.duration=20000000
