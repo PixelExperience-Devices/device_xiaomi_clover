@@ -148,6 +148,8 @@ ro.vendor.qti.va_aosp.support=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 vendor.opengles.version=196610
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
 
 # Media
 debug.stagefright.omx_default_rank=0
