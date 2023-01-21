@@ -827,3 +827,7 @@ vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
 vendor/lib/libseemore.so|cd207541c3cdd97eb25ef2a9c63662054393e81f
 vendor/lib/libtrueportrait.so|b8e11c098bd859aae6c535cdb87e3e36f6b1c6ef
 vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
+
+# Camera - from clover
+-vendor/lib/libts_face_beautify_hal.so
+-vendor/lib/libts_detected_face_hal.so
