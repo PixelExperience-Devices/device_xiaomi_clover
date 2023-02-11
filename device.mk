@@ -337,6 +337,8 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     DialerOverlay \
@@ -347,10 +349,6 @@ PRODUCT_PACKAGES += \
     TelephonyOverlay \
     CloverFrameworksOverlay \
     CloverSystemUIOverlay
-
-
-# RRO configuration
-TARGET_USES_RRO := true
     
 # Permissions
 PRODUCT_COPY_FILES += \
