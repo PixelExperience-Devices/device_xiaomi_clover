@@ -73,8 +73,6 @@ function blob_fixup() {
         ;;
 
     esac
-
-    device_blob_fixup "$@"
 }
 
 # Initialize the helper
