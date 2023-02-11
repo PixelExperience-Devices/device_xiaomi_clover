@@ -18,7 +18,6 @@ PRODUCT_COMPRESSED_APEX := false
 
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/clover/clover-vendor.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
