@@ -22,7 +22,7 @@ from hashlib import sha1
 DEVICE = 'clover'
 VENDOR = 'xiaomi'
 VENDOR_PATH = os.path.join(
-    *['..', '..', '..', 'vendor', VENDOR, DEVICE, 'proprietary'])
+    *['..', '..', '..', '..', 'vendor', VENDOR, DEVICE, 'proprietary'])
 
 
 class Updater:
