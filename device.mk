@@ -244,6 +244,12 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
     $(DEVICE_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
 
+# IFAA
+PRODUCT_PACKAGES += \
+    IFAAService \
+    vendor.xiaomi.hardware.mlipay@1.0 \
+    vendor.xiaomi.hardware.mlipay@1.1
+
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
