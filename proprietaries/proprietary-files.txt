@@ -50,7 +50,6 @@ vendor/lib/libaudioparsers.so|bc02240aa70e41ba85da6f04541d6bc599982b4b
 vendor/lib/libdrc.so|95ae02c1c274e9407b992587b8bb0ff39a08f34e
 vendor/lib/libhdmipassthru.so|8357a37b262802b87ac2f69cbb5f72ffa4f95a34
 vendor/lib/libqtigef.so|76107629ebf7089b8836deec0b23cde792164487
-vendor/lib/libsurround_3mic_proc.so|08fe1c31126be9aeb50d37fbdc9192f3f16279ef
 vendor/lib64/libacdb-fts.so|e37edcbc772e33f0790684085d410b05a3b26a8f
 vendor/lib64/libacdbloader.so|57087b898b5ebe26464bc618aa0bacbb6e2ecbbd
 vendor/lib64/libacdbrtac.so|6117692194c95f019955342d5263822c016f17b0
@@ -144,6 +143,10 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|ece3dafc4447e8302109851c3a
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
+# Camera - from clover
+-vendor/lib/libts_face_beautify_hal.so
+-vendor/lib/libts_detected_face_hal.so
+
 # Camera
 vendor/etc/camera/camera_config.xml
 vendor/etc/camera/csidtg_camera.xml
@@ -155,7 +158,6 @@ vendor/etc/camera/s5k3p8sp_chromatix.xml
 vendor/etc/camera/s5k5e8_chromatix.xml
 vendor/etc/camera/sdm_ys_32p_120_21_5_perturb50.bin
 vendor/lib/libarcsoft_high_dynamic_range.so
-vendor/lib/libcdsprpc.so
 vendor/lib/libdepthmapwrapper.so
 vendor/lib/libdualcameraddm.so
 vendor/lib/libflash_pmic.so
@@ -233,11 +235,6 @@ vendor/lib/libscvePanorama_lite.so
 vendor/lib/libseemore.so
 vendor/lib/libvideobokeh.so
 vendor/lib/libvideoutils.so
-vendor/lib64/libcdsprpc.so
-vendor/lib64/libdualcameraddm.so
-vendor/lib64/liboptizoom.so
-vendor/lib64/libts_detected_face_hal.so
-vendor/lib64/libts_face_beautify_hal.so
 
 # Camera actuators
 vendor/lib/libactuator_bu64297_f13v10l.so
@@ -1168,7 +1165,3 @@ vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
 vendor/lib/libseemore.so|cd207541c3cdd97eb25ef2a9c63662054393e81f
 vendor/lib/libtrueportrait.so|b8e11c098bd859aae6c535cdb87e3e36f6b1c6ef
 vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
-
-# Camera - from clover
--vendor/lib/libts_face_beautify_hal.so
--vendor/lib/libts_detected_face_hal.so
