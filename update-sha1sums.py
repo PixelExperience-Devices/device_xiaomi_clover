@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
+# Copyright (C) 2022 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,113 +19,64 @@ import os
 import sys
 from hashlib import sha1
 
-device = 'sdm660-common'
-vendor = 'xiaomi'
-
-with open('proprietary-files.txt', 'r') as f:
-    lines = f.read().splitlines()
-vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'
-needSHA1 = False
+DEVICE = 'clover'
+VENDOR = 'xiaomi'
+VENDOR_PATH = os.path.join(
+    *['..', '..', '..', 'vendor', VENDOR, DEVICE, 'proprietary'])
 
 
-class Section:
-    def __init__(self, name, group):
-        self.name = name
-        self.group = group
+class Updater:
+    def __init__(self, filename):
+        self.filename = filename
+        with open(self.filename, 'r') as f:
+            self.lines = f.read().splitlines()
 
-    def __repr__(self):
-        return repr(self.name)
+    def write(self):
+        with open(self.filename, 'w') as f:
+            f.write('\n'.join(self.lines) + '\n')
 
-    def apply(self):
-        if self.group:
-            lines.append(self.name)
-            # Ignore leading '-' while sorting
-            self.group = sorted(self.group, key=lambda line: line[1:] if line.startswith('-') else line)
-            lines.extend(self.group)
-            lines.append('')
+    def cleanup(self):
+        for index, line in enumerate(self.lines):
+            # Skip empty or commented lines
+            if len(line) == 0 or line[0] == '#' or '|' not in line:
+                continue
 
+            # Drop SHA1 hash, if existing
+            self.lines[index] = line.split('|')[0]
 
-def sort_file(ignore_section=""):
-    grp = []
-    sections = []
-    name = ""
+        self.write()
 
-    for line in lines:
-        if len(line) != 0:
+    def update(self):
+        need_sha1 = False
+        for index, line in enumerate(self.lines):
+            # Skip empty lines
+            if len(line) == 0:
+                continue
+
+            # Check if we need to set SHA1 hash for the next files
             if line[0] == '#':
-                if name and grp:
-                    sections.append(Section(name, grp))
-                    grp = []
-                if ignore_section and ignore_section in line:
-                    name = ""
-                else:
-                    name = line
-            elif name:
-                grp.append(line)
+                need_sha1 = (' - from' in line)
+                continue
 
-    if name and grp:
-        sections.append(Section(name, grp))
+            if need_sha1:
+                # Remove existing SHA1 hash
+                line = line.split('|')[0]
 
-    lines.clear()
+                file_path = line.split(';')[0].split(':')[-1]
+                if file_path[0] == '-':
+                    file_path = file_path[1:]
 
-    sections = sorted(sections, key=lambda sec: str.lower(sec.name))
-    for section in sections:
-        section.apply()
-
-
-def cleanup():
-    for index, line in enumerate(lines):
-        # Skip empty or commented lines
-        if len(line) == 0 or line[0] == '#' or '|' not in line:
-            continue
-
-        # Drop SHA1 hash, if existing
-        lines[index] = line.split('|')[0]
-    lines.append('')
-
-
-def update():
-    for index, line in enumerate(lines):
-        # Skip empty lines
-        if len(line) == 0:
-            continue
-
-        # Check if we need to set SHA1 hash for the next files
-        if line[0] == '#':
-            needSHA1 = (' - from' in line)
-            continue
-
-        if needSHA1:
-            # Remove existing SHA1 hash
-            line = line.split('|')[0]
-
-            filePath = line.split(';')[0].split(':')[-1]
-            if filePath[0] == '-':
-                filePath = filePath[1:]
-
-            try:
-                with open(os.path.join(vendorPath, filePath), 'rb') as f:
+                with open(os.path.join(VENDOR_PATH, file_path), 'rb') as f:
                     hash = sha1(f.read()).hexdigest()
-                lines[index] = '%s|%s' % (line, hash)
 
-            except FileNotFoundError:
-                print("File not found: %s" % filePath)
+                self.lines[index] = '{}|{}'.format(line, hash)
 
-    lines.append('')
+        self.write()
 
 
-if len(sys.argv) >= 2:
-    if sys.argv[1] == '-c':
-        cleanup()
-    elif sys.argv[1] == '-s':
-        if len(sys.argv) == 3:
-            sort_file(sys.argv[2])
-        else:
-            sort_file()
+for file in ['proprietary-files.txt']:
+    updater = Updater(file)
+    if len(sys.argv) == 2 and sys.argv[1] == '-c':
+        updater.cleanup()
     else:
-        update()
-else:
-    update()
-
-with open('proprietary-files.txt', 'w') as file:
-    file.write('\n'.join(lines))
+        updater.update()

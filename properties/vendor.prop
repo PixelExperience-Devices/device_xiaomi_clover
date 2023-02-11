@@ -17,6 +17,7 @@ dalvik.vm.image-dex2oat-threads=8
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
 audio.offload.video=true
+persist.vendor.audio.fluence.audiorec=true
 persist.vendor.audio.fluence.speaker=false
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
@@ -149,6 +150,7 @@ vendor.gralloc.enable_fb_ubwc=1
 video.disable.ubwc=1
 vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
+debug.vds.allow_hwc=0
 
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
@@ -184,6 +186,7 @@ persist.rcs.supported=0
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
+persist.radio.multisim.config=ssss
 persist.sys.fflag.override.settings_provider_model=false
 persist.vendor.radio.aosp_usr_pref_sel=true
 persist.vendor.radio.add_power_save=1
@@ -223,6 +226,9 @@ ro.soc.model=SDM660
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# System
+persist.sys.binary_xml=false
 
 # USB
 vendor.usb.diag.func.name=diag

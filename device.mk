@@ -4,76 +4,36 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Product
-PRODUCT_USES_QCOM_HARDWARE := true
-PRODUCT_BOARD_PLATFORM := sdm660
-TARGET_BOARD_PLATFORM := sdm660
-OVERRIDE_QCOM_HARDWARE_VARIANT := sdm660
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product-if-exists, build/target/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Enable updating of APEXes
-ifeq ($(ENABLE_APEX), true)
-TARGET_SUPPORTS_UPDATABLE_APEX := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-$(call inherit-product-if-exists, vendor/prebuilts/config/apex.mk)
-else
-PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
-endif
 
 # Disable APEX compression
 PRODUCT_COMPRESSED_APEX := false
 
 # Inherit proprietary files
-$(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/clover/clover-vendor.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 
-# Common Tree Path
-COMMON_PATH := device/xiaomi/sdm660-common
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
-# A/B
-ifeq ($(ENABLE_AB), true)
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
+DEVICE_PATH := device/xiaomi/clover
 
-PRODUCT_PACKAGES += \
-    otapreopt_script
+# AAPT resource flavor
+PRODUCT_AAPT_CONFIG := large
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Boot control
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service \
-    android.hardware.health@2.1-impl.recovery \
-    bootctrl.sdm660 \
-    bootctrl.sdm660.recovery
-
-# Boot control debug
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-# Update engine
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_HOST_PACKAGES += \
-    brillo_update_payload
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-endif
+#####################################################################################
 
 # Adapt Launch 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml
+    $(DEVICE_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -97,7 +57,7 @@ PRODUCT_PACKAGES += \
 
 # Audio Configs
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(COMMON_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Audio Policy
 PRODUCT_COPY_FILES += \
@@ -110,12 +70,15 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService \
     com.dsi.ant@1.0.vendor
 
 # AuthSecret
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0-service
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1200
 
 # Biometrics
 PRODUCT_PACKAGES += \
@@ -127,9 +90,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
-
-# Boot animation
-TARGET_BOOTANIMATION_SIZE := 1080p
 
 # Call recording
 PRODUCT_PACKAGES += \
@@ -145,6 +105,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# Control groups and task profiles
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Capability configstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0 \
@@ -157,24 +122,14 @@ PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor \
     android.hardware.media.c2@1.1.vendor
 
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk )
-
-# ConsumerIR
-ifeq ($(BOARD_HAVE_IR),true)
+# DeviceSettings
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.xiaomi_sdm660
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-endif
+   DeviceSettings
 
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.frameworks.displayservice@1.0.vendor \
-    android.hardware.graphics.allocator@3.0-impl \
-    android.hardware.graphics.allocator@4.0-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
@@ -196,12 +151,16 @@ PRODUCT_PACKAGES += \
 
 # Display Device Config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/displayconfig/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+    $(DEVICE_PATH)/configs/displayconfig/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     android.hardware.drm@1.4.vendor
+
+# Folio
+PRODUCT_PACKAGES += \
+    folio_daemon
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
@@ -235,11 +194,11 @@ PRODUCT_PACKAGES += \
 
 # GPS Config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/gps/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
-    $(COMMON_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
-    $(COMMON_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
-    $(COMMON_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
-    $(COMMON_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
+    $(DEVICE_PATH)/gps/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
+    $(DEVICE_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    $(DEVICE_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+    $(DEVICE_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+    $(DEVICE_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
 PRODUCT_PACKAGES += \
     flp.conf \
@@ -282,8 +241,8 @@ PRODUCT_PACKAGES += \
 
 # IDC
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    $(COMMON_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
+    $(DEVICE_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
+    $(DEVICE_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -293,7 +252,9 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.class_main.sh \
+    init.device.rc \
     init.goodix.sh \
+    init.macaddress_setup.sh \
     init.msm.usb.configfs.rc \
     init.qcom.post_boot.sh \
     init.qcom.early_boot.sh \
@@ -307,22 +268,13 @@ PRODUCT_PACKAGES += \
     init.verity.rc \
     ueventd.qcom.rc
 
-# FM
-ifeq ($(BOARD_HAVE_QCOM_FM),true)
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio \
-    qcom.fmradio.xml
-endif
-
 # IRSC
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+    $(DEVICE_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(COMMON_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -338,17 +290,17 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_sdm660_v1.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_performance_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_sdm660_v1.xml \
-    $(COMMON_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_sdm660_v1.xml \
-    $(COMMON_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
-    $(COMMON_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
-    $(COMMON_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_sdm660_v1.xml \
-    $(COMMON_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_sdm660_v1.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_performance_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_sdm660_v1.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_sdm660_v1.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles_sdm660_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_sdm660_v1.xml \
+    $(DEVICE_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
 
 # Media Google
 PRODUCT_COPY_FILES += \
@@ -383,7 +335,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay
+    $(DEVICE_PATH)/overlay
 
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
@@ -392,7 +344,10 @@ PRODUCT_PACKAGES += \
     SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay \
-    TelephonyOverlay
+    TelephonyOverlay \
+    CloverFrameworksOverlay \
+    CloverSystemUIOverlay
+
 
 # RRO configuration
 TARGET_USES_RRO := true
@@ -402,6 +357,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
@@ -450,21 +406,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi_sdm660-libperfmgr
 
 # Powerhint
-ifeq ($(EAS_POWERHINT_VARIANT), sdm636)
-    PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/power-libperfmgr/sdm636_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-else
-    PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/power-libperfmgr/sdm660_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-endif
-
-# Preopt SystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    Nexuslauncher \
-    lawnchair \
-    Settings \
-    SystemUI
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/power-libperfmgr/sdm660_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -473,17 +416,17 @@ PRODUCT_PACKAGES += \
 
 # Privapp-Permissions
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/privapp-permission/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml \
-    $(COMMON_PATH)/configs/privapp-permission/privapp-permissions-qti-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
-    $(COMMON_PATH)/configs/privapp-permission/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
+    $(DEVICE_PATH)/configs/privapp-permission/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml \
+    $(DEVICE_PATH)/configs/privapp-permission/privapp-permissions-qti-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
+    $(DEVICE_PATH)/configs/privapp-permission/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
+    $(DEVICE_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
 # QMI
 $(call inherit-product, external/json-c/Android.configure.mk)
@@ -492,8 +435,8 @@ PRODUCT_PACKAGES += \
 
 # QTI Performance
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
-    $(COMMON_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
+    $(DEVICE_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
+    $(DEVICE_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -513,8 +456,8 @@ PRODUCT_BOOT_JARS += \
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    $(COMMON_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    $(DEVICE_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    $(DEVICE_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -526,7 +469,8 @@ PRODUCT_PACKAGES += \
 
 # Sensor Config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    $(DEVICE_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+    $(DEVICE_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
 # Security Patch
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -537,23 +481,25 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
+    $(DEVICE_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/xiaomi
+    hardware/google/pixel
 
-# System
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.binary_xml=false
+# Tablet features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tablet_core_hardware.xml
+
+# Tablet Specific
+PRODUCT_PACKAGES += \
+    androidx.window.extensions
 
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# Tin
+# Tinyxml
 PRODUCT_PACKAGES += \
-    tinyxml2 \
     libxml2 
 
 # Thermal
@@ -562,13 +508,13 @@ PRODUCT_PACKAGES += \
 
 # Thermal Conf
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-battery.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-battery.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-battery2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-battery2.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-default.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-gameing.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-gameing.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
-    $(COMMON_PATH)/configs/thermal/thermal-engine-performance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-performance.conf
+    $(DEVICE_PATH)/configs/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-battery.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-battery.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-battery2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-battery2.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-default.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-gameing.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-gameing.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine-performance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-performance.conf
 
 # USB
 PRODUCT_PACKAGES += \
@@ -602,16 +548,12 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     libwpa_client \
     WifiOverlay \
+    CloverWifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
 # WiFi Configs
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(COMMON_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-# DeviceSettings
-PRODUCT_PACKAGES += \
-   DeviceSettings
-
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
