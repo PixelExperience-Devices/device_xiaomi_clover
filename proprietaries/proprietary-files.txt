@@ -1139,15 +1139,6 @@ vendor/etc/init/init_thermal-engine.rc|a0310f09da9f09c67e110607b73aec9f9f981c4c
 -vendor/lib/libthermalclient.so|0fcade69460becdbb5adb54e5ff9d11ff8d32c23
 -vendor/lib64/libthermalclient.so|30033f4831c1b6e30d9cee4a93b599fdf97cb3a7
 
-# Thermal (Configs)
-vendor/etc/thermal-engine-battery.conf
-vendor/etc/thermal-engine-battery2.conf
-vendor/etc/thermal-engine-gameing.conf
-vendor/etc/thermal-engine-performance.conf
-vendor/etc/thermal-engine-map.conf
-vendor/etc/thermal-engine-default.conf
-vendor/etc/thermal-engine.conf
-
 # Time services - from LA.UM.10.2.1.r1-03400-sdm660.0-kunmun
 -vendor/app/TimeService/TimeService.apk|b3e694ecbf8eccf3b503b2adfc1133f13fa0c176
 -vendor/lib/libtime_genoff.so|620254812afea89bf555e5b6bb2fad7730fb91e0
