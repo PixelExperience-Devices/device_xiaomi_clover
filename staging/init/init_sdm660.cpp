@@ -165,26 +165,4 @@ void vendor_load_properties()
     property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
-
-   std::string product = GetProperty("ro.product.vendor.device", "");	
-   if (product.find("whyred") != std::string::npos)
-   {
-  	std::string region = GetProperty("ro.boot.hwc", "");
-
-    if (region.find("CN") != std::string::npos || region.find("Global") != std::string::npos || region.find("GLOBAL") != std::string::npos)
-	{
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "Redmi Note 5");
-        property_override_dual("ro.product.odm.model", "ro.product.system.model", "Redmi Note 5");
-        property_override_dual("ro.product.vendor.model", "persist.vendor.camera.exif.model", "Redmi Note 5");
-	}
-	else
-	{
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "Redmi Note 5 Pro");
-        property_override_dual("ro.product.odm.model", "ro.product.system.model", "Redmi Note 5 Pro");
-        property_override_dual("ro.product.vendor.model", "persist.vendor.camera.exif.model", "Redmi Note 5 Pro");
-	}
-
-    // Set hardware revision
-    property_override("ro.boot.hardware.revision", GetProperty("ro.boot.hwversion", "").c_str());
-  }
 }
