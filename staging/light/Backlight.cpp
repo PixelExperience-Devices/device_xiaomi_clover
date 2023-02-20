@@ -61,13 +61,13 @@ static const std::string kLedDevices[] = {
 };
 
 BacklightDevice *getBacklightDevice() {
-    for (auto &device : kBacklightDevices) {
-        auto backlight = new BacklightBrightness(device);
-        if (backlight->exists()) {
-            return backlight;
-        }
-        delete backlight;
-    }
+    // for (auto &device : kBacklightDevices) {
+    //     auto backlight = new BacklightBrightness(device);
+    //     if (backlight->exists()) {
+    //         return backlight;
+    //     }
+    //     delete backlight;
+    // }
 
     for (auto& device : kLedDevices) {
         auto backlight = new LEDBacklight(device);
