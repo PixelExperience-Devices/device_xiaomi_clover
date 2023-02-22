@@ -15,6 +15,18 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="pref_version_indicator_cat"
+        android:title="@string/pref_version_indicator_cat">
+
+        <Preference
+            android:icon="@drawable/information_outline"
+            android:key="pref_version_indicator"
+            android:summary="@string/pref_version_indicator_summary"
+            android:title="@string/pref_version_indicator" />
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="vibration"
         android:title="@string/vibration_title">
@@ -116,6 +128,7 @@
                 android:targetClass="com.advanced.settings.doze.DozeSettingsActivity"
                 android:targetPackage="com.advanced.settings.doze" />
         </Preference>
+
         <Preference
             android:key="device_kcal"
             android:persistent="false"
@@ -126,6 +139,7 @@
                 android:targetClass="org.lineageos.settings.kcal.KCalSettingsActivity"
                 android:targetPackage="org.lineageos.settings.kcal" />
         </Preference>
+
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
             android:key="fps_info"
             android:icon="@drawable/ic_fps_info"
@@ -133,19 +147,6 @@
             android:summary="@string/fps_info_summary"
             android:persistent="true"
             android:defaultValue="false" />
-
-        <Preference
-            android:key="device_jason"
-            android:persistent="false"
-            android:summary="@string/jason_pref_summary"
-            android:title="@string/jason_pref_title"
-            android:icon="@drawable/ic_jason">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.devicex.ButtonSettingsActivity"
-                android:targetPackage="org.lineageos.settings.devicex" />
-        </Preference>
-
     </PreferenceCategory>
 
     <PreferenceCategory

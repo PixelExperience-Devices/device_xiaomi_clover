@@ -19,12 +19,16 @@ package org.lineageos.settings.device;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.provider.Settings;
 
 import org.lineageos.settings.device.kcal.Utils;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 
 import java.lang.Math.*;
+import java.util.Locale;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
 
@@ -90,6 +94,22 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_KEY_FPS_INFO, 0) == 1;
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
+        }
+
+        SharedPreferenceUtil sharedPreferenceUtil = SharedPreferenceUtil.getInstance();
+        boolean first_ref_shown = (boolean) sharedPreferenceUtil.get(context, "first_ref_shown",
+                false);
+
+        if(first_ref_shown) {
+            return;
+        }
+
+        Locale locale = Resources.getSystem().getConfiguration().getLocales().get(0);
+        String tag = locale.toLanguageTag();
+        if(tag.equals("zh-Hans-CN")) {
+            Intent intent1 = new Intent(context, NoticeActivity.class);
+            intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent1);
         }
     }
 }

@@ -91,6 +91,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:name=".NoticeActivity"
+            android:label="@string/pref_first_ref" />
+
         <service
             android:name=".FPSInfoService"
             android:exported="true">
