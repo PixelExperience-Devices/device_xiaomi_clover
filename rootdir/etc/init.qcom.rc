@@ -746,12 +746,6 @@ on charger
     # Notification LED
     chown system system /sys/class/leds/red/brightness
     write /sys/class/leds/red/brightness 255
-
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    write /sys/class/leds/lcd-backlight/brightness 4000
-
-    chown system system /sys/class/graphics/fb0/inchargeonly
-    write /sys/class/graphics/fb0/inchargeonly 1
     
     start qcom-post-boot
 
