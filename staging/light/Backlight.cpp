@@ -52,8 +52,10 @@ private:
 };
 
 static const std::string kBacklightDevices[] = {
+#ifndef USE_LCD_BACKLIGHT_INTERFACE_ONLY
     "backlight",
     "panel0-backlight",
+#endif
 };
 
 static const std::string kLedDevices[] = {
@@ -61,13 +63,13 @@ static const std::string kLedDevices[] = {
 };
 
 BacklightDevice *getBacklightDevice() {
-    // for (auto &device : kBacklightDevices) {
-    //     auto backlight = new BacklightBrightness(device);
-    //     if (backlight->exists()) {
-    //         return backlight;
-    //     }
-    //     delete backlight;
-    // }
+    for (auto &device : kBacklightDevices) {
+        auto backlight = new BacklightBrightness(device);
+        if (backlight->exists()) {
+            return backlight;
+        }
+        delete backlight;
+    }
 
     for (auto& device : kLedDevices) {
         auto backlight = new LEDBacklight(device);
