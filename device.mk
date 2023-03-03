@@ -27,10 +27,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 #####################################################################################
 
-# Adapt Launch 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl:32 \
@@ -442,11 +438,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, external/json-c/Android.configure.mk)
 PRODUCT_PACKAGES += \
     libjson
-
-# QTI Performance
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
-    $(DEVICE_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
 
 # RIL
 PRODUCT_PACKAGES += \
