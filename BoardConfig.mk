@@ -152,7 +152,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/properties/system_ext.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
