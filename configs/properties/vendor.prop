@@ -169,6 +169,7 @@ video.disable.ubwc=1
 vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
 debug.vds.allow_hwc=0
+ro.hwui.render_ahead=20
 
 # Fastbootd
 ro.fastbootd.available=true
