@@ -158,4 +158,10 @@
     <string name="pref_first_ref">First boot</string>
     <string name="pref_first_ref_message">Pixel Experience Android 13 - Mi Pad 4 / 4 Plus\nFree system, no paid way to get this system.\nAny re-selling is prohibited.</string>
     <string name="pref_first_not_yet">Wait for 10s</string>
+    
+    <!-- USB fastcharge -->
+    <string name="usb_fastcharge_title">USB Fastcharge</string>
+    <string name="fastcharge_title">Enable USB Fastcharge</string>
+    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
+
 </resources>
