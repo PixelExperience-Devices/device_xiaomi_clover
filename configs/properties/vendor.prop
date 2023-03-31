@@ -170,6 +170,7 @@ vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
 debug.vds.allow_hwc=0
 ro.hwui.render_ahead=20
+debug.renderengine.backend=skiaglthreaded
 
 # Fastbootd
 ro.fastbootd.available=true
