@@ -792,6 +792,9 @@ vendor/lib64/hw/vulkan.adreno.so|74f3ef6831ebc3c6c5f3ebcadc7009abe7fc152b
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
 system_ext/framework/com.android.hotwordenrollment.common.util.jar|bef92589e75a6da6043f85f4b9b0e85866429624
 
+# IRQ balance - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
+vendor/bin/msm_irqbalance|b075c2f4092c175950a2c26d19bf2013e2efd6d5
+
 # Keymaster - from S62Pro RKQ1.210406.002
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|002c638011b1936fecaa896874d3361ec68eaa46
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so|a3c2f2a5006a85015b6081136e1b52d22ef24f10
