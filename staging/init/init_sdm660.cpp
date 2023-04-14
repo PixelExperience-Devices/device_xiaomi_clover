@@ -107,6 +107,7 @@ void vendor_load_persist_properties() {
         std::string hw_device;
         char const* hw_id_file = "/sys/devices/virtual/graphics/fb0/msm_fb_panel_info";
 
+        property_override("ro.setupwizard.rotation_locked", "false");
         property_overrride_triple("ro.product.name", "ro.product.system.name",
                                   "ro.product.vendor.name", "clover");
         ReadFileToString(hw_id_file, &hw_device);
