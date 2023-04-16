@@ -17,4 +17,19 @@
 <resources>
     <string name="app_name">平板扩展</string>
     <string name="volume_panel_trigger_title">音量面板</string>
+
+    <string name="category_battery">电源</string>
+    <string name="pref_battery">电池</string>
+    <string name="pref_battery_summary">电池管理系统</string>
+
+    <string name="bms_category_step_charging">阶梯充电</string>
+    <string name="bms_step_charging_switch">开启阶梯充电</string>
+    <string name="bms_step_charging_switch_summary">自动根据电池电压以及温度调整充电速度以保护电池</string>
+    <string name="bms_category_charge_limiter">充电限制器</string>
+    <string name="bms_charge_limiter_notice">注意</string>
+    <string name="bms_charge_limiter_description">如果你需要打开任何充电限制器选项，建议关闭“显示 - 连接或断开电源时唤醒”，不然你可能会在充电控制期间触发一些意外唤醒</string>
+    <string name="bms_always_connected_mode">持续充电模式</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">将电量限制在40%-60%以保护电池</string>
+    <string name="bms_limit_to_eighty" formatted="false">限制最高电量为80%左右</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">电量在80%左右时停止充电以保护电池(持续模式优先)</string>
 </resources>

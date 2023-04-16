@@ -17,4 +17,19 @@
 <resources>
     <string name="app_name">Clover Parts</string>
     <string name="volume_panel_trigger_title">Volume Panel</string>
+
+    <string name="category_battery">Power Supply</string>
+    <string name="pref_battery">Battery</string>
+    <string name="pref_battery_summary">Battery management system</string>
+
+    <string name="bms_category_step_charging">Step charging</string>
+    <string name="bms_step_charging_switch">Enable step charging</string>
+    <string name="bms_step_charging_switch_summary">Automatically tune charge speed depends on battery data(voltage/temperature) to protect battery</string>
+    <string name="bms_category_charge_limiter">Charge limiter</string>
+    <string name="bms_charge_limiter_notice">Notice</string>
+    <string name="bms_charge_limiter_description">If you turn on any charge limiter option, you would better turn off the “Display - Wake on plug” or you may get some unexpected wakeups during the charge control</string>
+    <string name="bms_always_connected_mode">Always connected mode</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Limit the battery percent between 40% and 60% to protect battery</string>
+    <string name="bms_limit_to_eighty" formatted="false">Limit to around 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Suspend charging when the percent is around 80% to protect battery(Always connected mode will make this never happen)</string>
 </resources>

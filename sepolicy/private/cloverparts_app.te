@@ -1,0 +1,24 @@
+typeattribute cloverparts_app mlstrustedsubject;
+
+app_domain(cloverparts_app)
+
+allow cloverparts_app activity_service:service_manager find;
+allow cloverparts_app activity_task_service:service_manager find;
+allow cloverparts_app audio_service:service_manager find;
+allow cloverparts_app autofill_service:service_manager find;
+allow cloverparts_app content_capture_service:service_manager find;
+allow cloverparts_app gpu_service:service_manager find;
+allow cloverparts_app hint_service:service_manager find;
+allow cloverparts_app surfaceflinger_service:service_manager find;
+allow cloverparts_app game_service:service_manager find;
+allow cloverparts_app textservices_service:service_manager find;
+allow cloverparts_app netstats_service:service_manager find;
+allow cloverparts_app voiceinteraction_service:service_manager find;
+allow cloverparts_app batterystats_service:service_manager find;
+allow cloverparts_app batteryproperties_service:service_manager find;
+
+# ro.input.resampling, viewroot.profile_rendering
+dontaudit cloverparts_app default_prop:file read;
+
+allow cloverparts_app system_app_data_file:dir { create rw_dir_perms search open setattr };
+allow cloverparts_app system_app_data_file:file { create rw_file_perms rename setattr unlink };

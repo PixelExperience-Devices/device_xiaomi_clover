@@ -10,12 +10,42 @@ android_app {
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
     certificate: "platform",
+    init_rc: ["cloverparts.rc"],
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
+
+    static_libs: [
+        "org.pixelexperience.settings.resources",
+        "androidx.cardview_cardview",
+        "androidx.preference_preference",
+        "androidx.appcompat_appcompat",
+        "androidx.core_core",
+        "SettingsLib"
+    ],
 
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
 
+    required: [
+        "privapp-permissions_io.alcatraz.cloverparts",
+        "config-io.alcatraz.cloverparts",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_io.alcatraz.cloverparts",
+    sub_dir: "permissions",
+    src: "privapp-permissions_io.alcatraz.cloverparts.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "config-io.alcatraz.cloverparts",
+    sub_dir: "sysconfig",
+    src: "config-io.alcatraz.cloverparts.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
 }
