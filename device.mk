@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
     libsfplugin_ccodec \
     android.hardware.media.c2@1.2.vendor \
 
+# Configstore (Disabled)
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # DeviceSettings
 PRODUCT_PACKAGES += \
    DeviceSettings
