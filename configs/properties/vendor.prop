@@ -264,6 +264,7 @@ vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=0
 
 # WiFi
+ro.boot.wificountrycode=00
 wifi.aware.interface=wifi-aware0
 
 # Zygote
