@@ -18,4 +18,7 @@ public class Constants {
     public static final String BMS_STEP_CHG_SWITCH = "bms_step_charging_switch";
     public static final String BMS_ALWAYS_CONNECTED_MODE = "bms_always_connected_mode";
     public static final String BMS_LIMIT_TO_EIGHTY = "bms_limit_to_eighty";
+    public static final String BMS_DISABLE_CHARGING_RIPPLE_EFFECT_SWITCH = "bms_disable_charging_ripple_effect";
+
+    public static final String BMS_OVERLAY_DISABLE_CHARGING_RIPPLE = "io.alcatraz.cloverparts.disablechargingripple";
 }

@@ -37,7 +37,7 @@
             android:title="@string/bms_charge_limiter_notice" />
 
         <SwitchPreference
-            android:icon="@drawable/ic_baseline_whatshot_24"
+            android:icon="@drawable/ic_baseline_charging_station_24"
             android:key="bms_always_connected_mode"
             android:summary="@string/bms_always_connected_mode_summary"
             android:title="@string/bms_always_connected_mode" />
@@ -47,6 +47,18 @@
             android:key="bms_limit_to_eighty"
             android:summary="@string/bms_limit_to_eighty_summary"
             android:title="@string/bms_limit_to_eighty" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="cat_charge_limiter_helper"
+            android:title="@string/bms_category_charge_limiter_helper">
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_no_meeting_room_24"
+            android:key="bms_disable_charging_ripple_effect"
+            android:summary="@string/bms_disable_charging_ripple_effect_summary"
+            android:title="@string/bms_disable_charging_ripple_effect" />
 
     </PreferenceCategory>
 

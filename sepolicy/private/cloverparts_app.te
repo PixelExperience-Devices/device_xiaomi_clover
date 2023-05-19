@@ -1,3 +1,4 @@
+typeattribute cloverparts_app coredomain;
 typeattribute cloverparts_app mlstrustedsubject;
 
 app_domain(cloverparts_app)
@@ -16,6 +17,7 @@ allow cloverparts_app netstats_service:service_manager find;
 allow cloverparts_app voiceinteraction_service:service_manager find;
 allow cloverparts_app batterystats_service:service_manager find;
 allow cloverparts_app batteryproperties_service:service_manager find;
+allow cloverparts_app overlay_service:service_manager find;
 
 # ro.input.resampling, viewroot.profile_rendering
 dontaudit cloverparts_app default_prop:file read;

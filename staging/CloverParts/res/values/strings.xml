@@ -32,4 +32,7 @@
     <string name="bms_always_connected_mode_summary" formatted="false">Limit the battery percent between 40% and 60% to protect battery</string>
     <string name="bms_limit_to_eighty" formatted="false">Limit to around 80%</string>
     <string name="bms_limit_to_eighty_summary" formatted="false">Suspend charging when the percent is around 80% to protect battery(Always connected mode will make this never happen)</string>
+    <string name="bms_category_charge_limiter_helper">Charge limiter helper</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Disable charge ripple animation</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Helps to get a better experience for charge limiter(Requires a reboot to take effect)</string>
 </resources>

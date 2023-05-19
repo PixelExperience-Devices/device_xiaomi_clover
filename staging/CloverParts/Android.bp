@@ -31,6 +31,7 @@ android_app {
     required: [
         "privapp-permissions_io.alcatraz.cloverparts",
         "config-io.alcatraz.cloverparts",
+        "DisableChargingRippleOverlay",
     ],
 }
 

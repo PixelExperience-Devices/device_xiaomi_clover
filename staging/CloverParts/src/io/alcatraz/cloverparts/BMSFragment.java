@@ -14,7 +14,12 @@
 
 package io.alcatraz.cloverparts;
 
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.om.IOverlayManager;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.util.Log;
 
 import androidx.preference.Preference;
@@ -24,9 +29,13 @@ import androidx.preference.SwitchPreference;
 import static io.alcatraz.cloverparts.Constants.BMS_STEP_CHG_SWITCH;
 import static io.alcatraz.cloverparts.Constants.BMS_ALWAYS_CONNECTED_MODE;
 import static io.alcatraz.cloverparts.Constants.BMS_LIMIT_TO_EIGHTY;
+import static io.alcatraz.cloverparts.Constants.BMS_DISABLE_CHARGING_RIPPLE_EFFECT_SWITCH;
+import static io.alcatraz.cloverparts.Constants.BMS_OVERLAY_DISABLE_CHARGING_RIPPLE;
 
 public class BMSFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
-    private SwitchPreference mStepChargingSwitch;
+    private static final String TAG = "BMSFragment";
+
+    private SwitchPreference mStepChargingSwitch, mDisableChargingRippleEffectSwitch;
 
     @Override
     public void onCreatePreferences(Bundle bundle, String key) {
@@ -44,20 +53,41 @@ public class BMSFragment extends PreferenceFragment implements Preference.OnPref
                 ShellUtils.execCommand("echo " + (enabled ? "1" : "0") + " > /sys/class/power_supply/battery/step_charging_enabled", false);
                 ShellUtils.execCommand("echo " + (enabled ? "1" : "0") + " > /sys/class/power_supply/battery/sw_jeita_enabled", false);
                 break;
+            case BMS_DISABLE_CHARGING_RIPPLE_EFFECT_SWITCH:
+                boolean disabled = (boolean) o;
+                toggleRippleDisableOverlay(disabled);
+                break;
         }
         return true;
     }
 
     private void findPreferences() {
         mStepChargingSwitch = findPreference(BMS_STEP_CHG_SWITCH);
+        mDisableChargingRippleEffectSwitch = findPreference(BMS_DISABLE_CHARGING_RIPPLE_EFFECT_SWITCH);
     }
 
     private void bindListeners() {
         mStepChargingSwitch.setOnPreferenceChangeListener(this);
+        mDisableChargingRippleEffectSwitch.setOnPreferenceChangeListener(this);
     }
 
     private void updateSwitches() {
         ShellUtils.CommandResult result = ShellUtils.execCommand("cat /sys/class/power_supply/battery/step_charging_enabled", false);
         mStepChargingSwitch.setChecked(result.responseMsg.contains("1"));
+    }
+
+    private void toggleRippleDisableOverlay(boolean disabled) {
+        final IOverlayManager iom = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
+        final int userId = ActivityManager.getCurrentUser();
+        try {
+            iom.setEnabled(BMS_OVERLAY_DISABLE_CHARGING_RIPPLE, disabled, userId);
+            if (disabled) {
+                iom.setHighestPriority(BMS_OVERLAY_DISABLE_CHARGING_RIPPLE, userId);
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to " + (disabled ? "enable" : "disable")
+                    + " overlay " + BMS_OVERLAY_DISABLE_CHARGING_RIPPLE + " for user " + userId);
+        }
     }
 }

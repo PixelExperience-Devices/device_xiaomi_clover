@@ -18,6 +18,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import static io.alcatraz.cloverparts.Constants.BMS_STEP_CHG_SWITCH;
+
 public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -27,7 +29,7 @@ public class BootReceiver extends BroadcastReceiver {
 
         context.startService(new Intent(context, BMSService.class));
         SharedPreferenceUtil sharedPreferenceUtil = SharedPreferenceUtil.getInstance();
-        boolean stepChargingManualOverride = (boolean) sharedPreferenceUtil.get(context, "bms_step_charging_switch",
+        boolean stepChargingManualOverride = (boolean) sharedPreferenceUtil.get(context, BMS_STEP_CHG_SWITCH,
                 true);
 
         ShellUtils.execCommand("echo " + (stepChargingManualOverride ? "1" : "0") + " > /sys/class/power_supply/battery/step_charging_enabled", false);
