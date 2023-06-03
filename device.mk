@@ -148,6 +148,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor
 
+# Display commonsys
+$(call inherit-product, $(DEVICE_PATH)/oss-hals/display/display-commonsys/config/display-product-commonsys.mk)
+
 # DeviceDoze
 PRODUCT_PACKAGES += \
     DeviceDoze
@@ -573,3 +576,21 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(DEVICE_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libaacwrapper \
+    libnl \
+    libstagefright_enc_common \
+    libwfdgui_shim \
+    libwfdpiex_shim \
+    libwfdinput_shim \
+    libwfdui_shim \
+    wfdframework_shim
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon \
+    wfdframework_shim
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/config-wfd-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-wfd-system-ext.xml

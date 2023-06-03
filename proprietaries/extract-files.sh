@@ -56,8 +56,22 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    lib/libwfdcommonutils.so)
+        "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
+        "${PATCHELF}" --add-needed "libwfdpiex_shim.so" "${2}"
+        ;;
+
+    lib/libwfdmmsrc.so)
+        "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
+        "${PATCHELF}" --add-needed "libwfdui_shim.so" "${2}"
+        ;;
+    
+    lib/libwfdnative.so)
+        "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
+        ;;
+
     lib64/libwfdnative.so)
-        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
+        "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
         ;;
 
     vendor/lib/libmmcamera_bokeh.so)

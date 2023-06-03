@@ -2,3 +2,5 @@ get_prop(platform_app, exported_camera_prop)
 r_dir_file(platform_app, sysfs_zram)
 
 allow platform_app config_gz:file r_file_perms;
+set_prop(platform_app, wfd_service_prop)
+allow platform_app wfdservice_service:service_manager { find };
