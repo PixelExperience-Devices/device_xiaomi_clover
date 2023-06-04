@@ -48,7 +48,6 @@ vendor/lib/libaudioalsa.so|58a0d04ca4e845eb2b257a9a4a996427a1e8722c
 vendor/lib/libaudioconfigstore.so|1a752baf972930007e6b10a64bbcebe14b7cb6a5
 vendor/lib/libaudioparsers.so|bc02240aa70e41ba85da6f04541d6bc599982b4b
 vendor/lib/libdrc.so|95ae02c1c274e9407b992587b8bb0ff39a08f34e
-vendor/lib/libhdmipassthru.so|8357a37b262802b87ac2f69cbb5f72ffa4f95a34
 vendor/lib/libqtigef.so|76107629ebf7089b8836deec0b23cde792164487
 vendor/lib64/libacdb-fts.so|e37edcbc772e33f0790684085d410b05a3b26a8f
 vendor/lib64/libacdbloader.so|57087b898b5ebe26464bc618aa0bacbb6e2ecbbd
@@ -58,7 +57,6 @@ vendor/lib64/libaudcal.so|7a81bf842644e9410ee32f7154f8cb27be7b5b24
 vendor/lib64/libaudioalsa.so|c0476e09a6a722fbe09b8b36e75eec5d7c521187
 vendor/lib64/libaudioconfigstore.so|34777cc3ff62a2975c4c9c9b5b2732f7282ecc4a
 vendor/lib64/libaudioparsers.so|762919b5100cf203038b36dcee1f705c7b889dfc
-vendor/lib64/libhdmipassthru.so|19772c514c09be253316459992839d271e9f1918
 vendor/lib64/libqtigef.so|d67d34d56a64dd68c9968ee506bda77c987917c0
 
 # Audio ACDB

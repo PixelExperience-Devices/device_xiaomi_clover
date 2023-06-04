@@ -46,6 +46,13 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener\
 
+# Audio extensions
+PRODUCT_PACKAGES += \
+    libcirrusspkrprot \
+    libhdmipassthru \
+    libspkrprot \
+    libssrec
+
 # Audio Configs
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
