@@ -56,44 +56,23 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-    lib/libwfdcommonutils.so)
-        "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
-        "${PATCHELF}" --add-needed "libwfdpiex_shim.so" "${2}"
-        ;;
+    # lib/libwfdcommonutils.so)
+    #     "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
+    #     "${PATCHELF}" --add-needed "libwfdpiex_shim.so" "${2}"
+    #     ;;
 
-    lib/libwfdmmsrc.so)
-        "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
-        "${PATCHELF}" --add-needed "libwfdui_shim.so" "${2}"
-        ;;
+    # lib/libwfdmmsrc.so)
+    #     "${PATCHELF}" --add-needed "libwfdgui_shim.so" "${2}"
+    #     "${PATCHELF}" --add-needed "libwfdui_shim.so" "${2}"
+    #     ;;
     
-    lib/libwfdnative.so)
-        "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
-        ;;
+    # lib/libwfdnative.so)
+    #     "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
+    #     ;;
 
-    lib64/libwfdnative.so)
-        "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
-        ;;
-
-    vendor/lib/libmmcamera_bokeh.so)
-        "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
-        ;;
-
-    vendor/lib/libmmcamera_ppeiscore.so)
-        "${PATCHELF}" --remove-needed "libgui.so" "${2}"
-        ;;
-
-    vendor/lib64/libril-qc-hal-qmi.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
-        ;;
-
-    vendor/bin/mlipayd@1.1)
-           "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
-            ;;
-        
-    vendor/lib64/libmlipay.so | vendor/lib64/libmlipay@1.1.so)
-            "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
-            sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
-            ;;
+    # lib64/libwfdnative.so)
+    #     "${PATCHELF}" --add-needed "libwfdinput_shim.so" "${2}"
+    #     ;;
 
     esac
 }
