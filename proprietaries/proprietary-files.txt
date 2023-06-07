@@ -827,20 +827,11 @@ vendor/lib64/libgcs.so|8e53aa72fac4fdf28f383ebc505393ae6b205c4f
 vendor/lib64/liblistensoundmodel2.so|3bccd316aa0f7d8acb3ef2e400b9b75b49d90c2a
 
 # Media - from LA.UM.10.2.1.r1-03400-sdm660.0-kunmun
-lib/libFileMux.so|22005fb1595b2b76e199b82ff3790c1bc3d54a20
-lib/libOmxMux.so|66ccc804301bccfbd17afb39a60131dd1a3fa9bc
-lib64/libFileMux.so|8b31ad6706780a8e5225817d8bf8b683ba1523c5
-lib64/libOmxMux.so|3c2fef1fc174bd93ebdc4cbeca9c4acc3731222e
-system_ext/lib/libmmosal.so|d485ea00eea93f22f3bb9738c24f52711399689f
-system_ext/lib/libmmparser_lite.so|7264378fe6f12ef8a66d8ce1d970dcf1664b6e2d
-system_ext/lib64/libmmosal.so|6962f780fbba52f4c057e05f4ccadccadf4e690f
-system_ext/lib64/libmmparser_lite.so|a146ac76b5919cbe5d4e635c63e83ec74168d7d1
 vendor/lib/libAlacSwDec.so|3a6d7dae2808dbe111ff4449b4e1e82560466ef3
 vendor/lib/libApeSwDec.so|ff14ad2ebbabcd89278830d817e9aa6bdcb1799a
 vendor/lib/libdsd2pcm.so|f9d2f26315764c27137bc375bb85b20fabe66ff9
 vendor/lib/libFlacSwDec.so|707dbc6b5d2890dc3bba22c00b372f0973baebda
 vendor/lib/libI420colorconvert.so|c8e9a1fb33ae50f5b29c892c6edca2f7d9524af5
-vendor/lib/libmmosal.so|9309b491b033caa895a45bf769ed5af59adf1a2b
 vendor/lib/libOmxAacDec.so|59bca3949a893cc9b70ac432b87b4c656fffa4dd
 vendor/lib/libOmxAlacDec.so|b1c4795012458fc5a569be5e930ceb5603c0c88c
 vendor/lib/libOmxAlacDecSw.so|ff4b38dbead17dcd0c9a045f109fa4e92ca2992a
@@ -859,7 +850,6 @@ vendor/lib64/libAlacSwDec.so|9fbfad65ffca33e1ac480e9cb056467ac75a6d5a
 vendor/lib64/libApeSwDec.so|76d3cc02ca1c3cdc3c71e57dc6e53027d2bf3d37
 vendor/lib64/libFlacSwDec.so|002aa39927e75568efb81c7ae3a044c694babfc3
 vendor/lib64/libI420colorconvert.so|b3eb95a4e43763c73ea8d4ea112fb683b69ed42b
-vendor/lib64/libmmosal.so|fc4fdcc1f8d2fd75c95da4691c9511975f3b5bf3
 vendor/lib64/libOmxAacDec.so|f17b7e219fffda2069371222792b560619878816
 vendor/lib64/libOmxAlacDec.so|828edcaa01f477359a9a6daf0cea6d5cb74f6db1
 vendor/lib64/libOmxAlacDecSw.so|159ea5d27936611107adf7355db760819bded68f
