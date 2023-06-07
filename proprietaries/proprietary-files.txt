@@ -637,9 +637,7 @@ vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 # FM - from LA.UM.10.2.1.r1-03400-sdm660.0-kunmun
 system_ext/lib64/fm_helium.so|d24c1e33e778867de8af036b97249a5e555e4d8e
 system_ext/lib64/libfm-hci.so|439f3bd3c8035482b598a099c2d5c7c09bad66c7
-system_ext/lib64/vendor.qti.hardware.fm@1.0.so|b1474a14f1a22007e2792c240777470b16e80574
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|09569a8e251c66647cc3f91cad39bae451843076
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|4b327b62fe598a12665c61942e05f516580def62
 
 # Gatekeeper QTI - from S62Pro RKQ1.210406.002
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|2e33e885b92e413440511049025497945d6b8484

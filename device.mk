@@ -164,6 +164,11 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     android.hardware.drm@1.4.vendor
 
+# FM
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.fm@1.0 \
+    vendor.qti.hardware.fm@1.0.vendor
+
 # Folio
 PRODUCT_PACKAGES += \
     folio_daemon
