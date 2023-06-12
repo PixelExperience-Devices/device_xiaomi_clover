@@ -279,7 +279,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.device.rc \
-    init.goodix.sh \
     init.macaddress_setup.sh \
     init.msm.usb.configfs.rc \
     init.qcom.post_boot.sh \
