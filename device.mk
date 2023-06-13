@@ -262,8 +262,8 @@ PRODUCT_COPY_FILES += \
 # IFAA
 PRODUCT_PACKAGES += \
     IFAAService \
-    vendor.xiaomi.hardware.mlipay@1.0 \
-    vendor.xiaomi.hardware.mlipay@1.1
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.0.vendor
 
 # IMS
 PRODUCT_PACKAGES += \
