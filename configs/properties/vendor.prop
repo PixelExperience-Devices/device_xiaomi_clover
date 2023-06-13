@@ -29,7 +29,6 @@ vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio_hal.period_multiplier=2 
-vendor.audio.feature.compr_voip.enable=true
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio_hal.period_size=240
 vendor.audio.hw.aac.encoder=true
@@ -128,9 +127,6 @@ persist.vendor.camera.isp.clock.optmz=0
 persist.vendor.camera.isp.turbo=1
 persist.vendor.camera.preview.ubwc=0
 persist.vendor.camera.stats.test=5
-vendor.video.disable.ubwc=1
-vidc.enc.dcvs.extra-buff-count=2
-video.disable.ubwc=1
 
 # Crypto
 ro.crypto.volume.options=::v2
@@ -164,7 +160,6 @@ vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
-debug.vds.allow_hwc=0
 ro.hwui.render_ahead=20
 debug.renderengine.backend=skiaglthreaded
 
