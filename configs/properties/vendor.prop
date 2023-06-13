@@ -194,9 +194,6 @@ persist.vendor.camera.perflock.enable=0
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
 
-# RCS
-persist.rcs.supported=0
-
 # Radio
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
