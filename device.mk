@@ -243,6 +243,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     android.frameworks.displayservice@1.0.vendor \
     android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.wifi.hostapd@1.3.vendor \
     android.hardware.neuralnetworks@1.3 \
     android.hardware.neuralnetworks@1.3.vendor \
     android.hardware.keymaster@4.1.vendor \
@@ -455,10 +456,20 @@ PRODUCT_COPY_FILES += \
 # QMI
 $(call inherit-product, external/json-c/Android.configure.mk)
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
 
 # RIL
 PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
+    ims-ext-common \
+    ims_ext_common.xml \
     librmnetctl \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
@@ -566,6 +577,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     android.hardware.wifi@1.5.vendor \
     hostapd \
+    hostapd_cli \
     libwifi-hal-qcom \
     libwpa_client \
     WifiOverlay \
