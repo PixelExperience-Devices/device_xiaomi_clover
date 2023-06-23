@@ -16,14 +16,6 @@
 */
 -->
 <resources>
-  
-    <!-- Remove custom extra padding for the QS icons and statusbar date -->
-    <dimen name="qs_items_padding">8dp</dimen>
-
-    <!-- Width for the spacer, used between QS tiles. -->
-    <dimen name="qs_quick_tile_space_width">0dp</dimen>
-
     <!-- Height of the status bar header bar when on Keyguard (match status_bar_height) -->
     <dimen name="status_bar_header_height_keyguard">@*android:dimen/status_bar_height</dimen>
-
 </resources>
