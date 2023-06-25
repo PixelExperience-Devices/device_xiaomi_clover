@@ -373,7 +373,7 @@ PRODUCT_PACKAGES += \
     DialerOverlay \
     FrameworksOverlay \
     SettingsOverlay \
-    SettingsProviderOverlayClover \
+    CloverSettingsProviderOverlay \
     SystemUIOverlay \
     TelephonyOverlay \
     CloverFrameworksOverlay \
