@@ -46,7 +46,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- <PreferenceCategory
         android:key="proximity_sensor"
         android:title="@string/proximity_sensor_title">
 
@@ -64,6 +64,6 @@
             android:title="@string/pocket_gesture_title"
             android:summary="@string/pocket_gesture_summary" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
 </PreferenceScreen>

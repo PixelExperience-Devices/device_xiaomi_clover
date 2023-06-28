@@ -42,8 +42,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mRaiseToWakePreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPocketPreference;
+    // private SwitchPreference mHandwavePreference;
+    // private SwitchPreference mPocketPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -75,13 +75,13 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mRaiseToWakePreference.setEnabled(dozeEnabled);
         mRaiseToWakePreference.setOnPreferenceChangeListener(this);
 
-        mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
-        mHandwavePreference.setEnabled(dozeEnabled);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
+        // mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
+        // mHandwavePreference.setEnabled(dozeEnabled);
+        // mHandwavePreference.setOnPreferenceChangeListener(this);
 
-        mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
-        mPocketPreference.setEnabled(dozeEnabled);
-        mPocketPreference.setOnPreferenceChangeListener(this);
+        // mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
+        // mPocketPreference.setEnabled(dozeEnabled);
+        // mPocketPreference.setOnPreferenceChangeListener(this);
 
         // Hide proximity sensor related features if the device doesn't support them
         if (!Utils.getProxCheckBeforePulse(getActivity())) {
@@ -114,8 +114,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         mPickUpPreference.setEnabled(isChecked);
         mRaiseToWakePreference.setEnabled(isChecked);
-        mHandwavePreference.setEnabled(isChecked);
-        mPocketPreference.setEnabled(isChecked);
+        // mHandwavePreference.setEnabled(isChecked);
+        // mPocketPreference.setEnabled(isChecked);
     }
 
     public static class HelpDialogFragment extends DialogFragment {

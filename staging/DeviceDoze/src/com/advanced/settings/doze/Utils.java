@@ -118,11 +118,11 @@ public final class Utils {
     }
 
     protected static boolean isHandwaveGestureEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_HAND_WAVE_KEY);
+        return false; //isGestureEnabled(context, GESTURE_HAND_WAVE_KEY);
     }
 
     protected static boolean isPocketGestureEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_POCKET_KEY);
+        return false; //isGestureEnabled(context, GESTURE_POCKET_KEY);
     }
 
     protected static boolean sensorsEnabled(Context context) {
