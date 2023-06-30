@@ -100,20 +100,20 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
             context.startService(new Intent(context, FPSInfoService.class));
         }
 
-        SharedPreferenceUtil sharedPreferenceUtil = SharedPreferenceUtil.getInstance();
-        boolean first_ref_shown = (boolean) sharedPreferenceUtil.get(context, "first_ref_shown",
-                false);
+        if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            SharedPreferenceUtil sharedPreferenceUtil = SharedPreferenceUtil.getInstance();
+            boolean first_ref_shown = (boolean) sharedPreferenceUtil.get(context, "first_ref_shown",
+                    false);
 
-        if(first_ref_shown) {
-            return;
-        }
-
-        Locale locale = Resources.getSystem().getConfiguration().getLocales().get(0);
-        String tag = locale.toLanguageTag();
-        if(tag.equals("zh-Hans-CN")) {
-            Intent intent1 = new Intent(context, NoticeActivity.class);
-            intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent1);
+            if(!first_ref_shown) {
+                Locale locale = Resources.getSystem().getConfiguration().getLocales().get(0);
+                String tag = locale.toLanguageTag();
+                if(tag.equals("zh-Hans-CN")) {
+                    Intent intent1 = new Intent(context, NoticeActivity.class);
+                    intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent1);
+                }
+            }
         }
     }
 }
