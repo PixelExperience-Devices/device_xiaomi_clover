@@ -377,6 +377,7 @@ PRODUCT_PACKAGES += \
     SystemUIOverlay \
     TelephonyOverlay \
     CloverFrameworksOverlay \
+    CloverTenInchFrameworksPowerOverlay \
     CloverSystemUIOverlay \
     CloverSimpleDeviceConfigOverlay
     

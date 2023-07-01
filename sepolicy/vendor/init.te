@@ -32,3 +32,6 @@ allow init {
 allow init hal_fingerprint_sdm660:process ptrace;
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };
+
+get_prop(init, exported_default_prop)
+allow init vendor_overlay_file:file { mounton };
