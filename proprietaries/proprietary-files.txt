@@ -75,10 +75,12 @@ vendor/lib/libacdbrtac.so|80d1ac83bee8c16e8fc9bb2c226e132dbb4ea0ad
 vendor/lib/libadiertac.so|79b77f53938bf5232748d928fd9bbde0a3da88d9
 vendor/lib/libadm.so|f302f2dd721c151b72cbc8c2c2e3699ddcf3ef3f
 vendor/lib/libaudcal.so|26ab9bdc71ff9d53cb14d3ae495e5959b730ab00
+vendor/lib/libaudio_log_utils.so|3f7c4a80774cee0e9fc5162d199155e9ca94388d
 vendor/lib/libaudioalsa.so|caa9282dd0af3da807104888d21299af0ad88678
 vendor/lib/libaudioconfigstore.so|79d1ab7b5cb0deef9dd3a2ff5799ca8c97b19030
 vendor/lib/libaudioparsers.so|71bf05d08c766dc4bd37a74c0eff04f7d718afb9
 vendor/lib/libdrc.so|0a0f85a502073813e48f37c29adc2edbb7407c8d
+vendor/lib/libhdmipassthru.so|ef0a2208cfa4e345675d428797acf6abd920d76c
 vendor/lib/libqtigef.so|9eeb56a073e1d8b6a85288c118cd3b3ab2ad8735
 vendor/lib/libsurround_3mic_proc.so|77d993c938591fb19b5c0ac4bd27e5364049ba06
 vendor/lib64/libacdb-fts.so|69526a450cdb93454720ca01da21eba267d4b8f5
@@ -86,9 +88,11 @@ vendor/lib64/libacdbloader.so|489ea58f49a99ff49725d10cf79e1e886d966638
 vendor/lib64/libacdbrtac.so|2a9a7f89b88ad366578b9fe8458d000adea067bf
 vendor/lib64/libadiertac.so|6c0d209e8da0150217c0f1f4d45ff8a7fd0968ec
 vendor/lib64/libaudcal.so|453cf77d051c84c53e4f534d2f96e9a777949cd7
+vendor/lib64/libaudio_log_utils.so|9bcdbf2209649f515942e81bd402025215ed1283
 vendor/lib64/libaudioalsa.so|8d4a7ff7352033987ac7fa8cad42720b312d549f
 vendor/lib64/libaudioconfigstore.so|90d0581e4974cdd89be261bd2d41a5df3f52691a
 vendor/lib64/libaudioparsers.so|5fda61f11849004db9196aa9604cb81cb3224df9
+vendor/lib64/libhdmipassthru.so|16b247e210d31807271a9889c7d222174eff82d4
 vendor/lib64/libqtigef.so|7b8bf697aaec567ff1f0cfd1fdc352a563df864a
 
 # Audio ACDB - from clover-user 8.1.0 OPM1.171019.019 9.8.29 release-keys

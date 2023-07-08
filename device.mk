@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
 # Audio extensions
 PRODUCT_PACKAGES += \
     libcirrusspkrprot \
-    libhdmipassthru \
     libspkrprot \
     libssrec
 
