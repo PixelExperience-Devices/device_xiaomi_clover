@@ -1,7 +1,3 @@
-# ART
-ro.vendor.qti.am.reschedule_service=true
-ro.sys.fw.dex2oat_thread_count=8
-
 # Audio
 audio.chk.cal.us=0
 audio.safemedia.bypass=true
