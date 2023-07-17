@@ -140,6 +140,8 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SettingsGoogle
 
+USE_DEX2OAT_DEBUG := false
+
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
