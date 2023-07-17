@@ -130,7 +130,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceSettings
 PRODUCT_PACKAGES += \
-   DeviceSettings
+    DeviceSettings
 
 # Dexpreopt - Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
