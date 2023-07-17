@@ -141,6 +141,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SettingsGoogle
 
 USE_DEX2OAT_DEBUG := false
+WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Display
 PRODUCT_PACKAGES += \
