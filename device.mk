@@ -144,6 +144,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 USE_DEX2OAT_DEBUG := false
 WITH_DEXPREOPT_DEBUG_INFO := false
 
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
