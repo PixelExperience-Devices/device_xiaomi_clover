@@ -392,8 +392,7 @@ PRODUCT_PACKAGES += \
     TelephonyOverlay \
     CloverFrameworksOverlay \
     CloverTenInchFrameworksPowerOverlay \
-    CloverSystemUIOverlay \
-    CloverSimpleDeviceConfigOverlay
+    CloverSystemUIOverlay
     
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
