@@ -75,3 +75,9 @@ service macaddress_setup /vendor/bin/sh /vendor/bin/init.macaddress_setup.sh
    user root
    group root
    oneshot
+
+# Setup final cpu.uclamp
+on property:sys.boot_completed=1
+    write /dev/cpuctl/background/cpu.uclamp.max 70
+    write /dev/cpuctl/system-background/cpu.uclamp.max 70
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 80
