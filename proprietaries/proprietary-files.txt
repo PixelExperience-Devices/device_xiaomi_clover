@@ -201,7 +201,7 @@ vendor/etc/camera/s5k5e8_chromatix.xml|a082b4d7d5d31ffcd750683befc48e70edba5722
 vendor/etc/camera/sdm_ys_32p_120_21_5_perturb50.bin|1ca031d5f8eb0e6aa3eedf7df8d53223b5054bc5
 vendor/lib/libarcsoft_high_dynamic_range.so|b44c468f31164b53a03e5f5951f649e33238c2e1
 vendor/lib/libdepthmapwrapper.so|e48d4e17ae6f2584a270e6c19634460a78fbc091
-vendor/lib/libdualcameraddm.so|ee957225465a396b3e7c9bcf4c0728ba93c246a8
+vendor/lib/libdualcameraddm.so|751af4f60368e75b9f38a05d9976ef721bd72590
 vendor/lib/libflash_pmic.so|6ac3343c1b2a2a2af81a7951b70818a4c76dcbf6
 vendor/lib/libjpegdhw.so|b7b43a46da32992efadfccfe3ee9e654fc201b77
 vendor/lib/libjpegdmahw.so|3e6a7af5969f78cd3e346b8dba6792aa3f781d91
@@ -215,7 +215,7 @@ vendor/lib/libmmcamera_eztune_module.so|44a9dc1d6111de5931483e23a1796f9cc9e881da
 vendor/lib/libmmcamera_facedetection_lib.so|bde21e7f6c03b35728df6aa35b2b766c75b3419c
 vendor/lib/libmmcamera_faceproc.so|2b580dc5464b390586246ad3cc23efdf903a2833
 vendor/lib/libmmcamera_faceproc2.so|86e0fd6c203ddb5c8f9276d40b84766f89d554f6
-vendor/lib/libmmcamera_hdr_gb_lib.so|8e394309bdbbca8ba1cbda4a7cf2865e99a18ecd
+vendor/lib/libmmcamera_hdr_gb_lib.so|9492a23885e10dcb0be4ad2484aecace314fd343
 vendor/lib/libmmcamera_hvx_add_constant.so|ca5c64911fa8de23638f4bd25c127fdf9de2a4f5
 vendor/lib/libmmcamera_hvx_grid_sum.so|662804a86c755f45031a35a5967a1c7533d74bbc
 vendor/lib/libmmcamera_imglib.so|0292ad9e1439ba8ef5b9ab0c119740c1d6e533aa
@@ -264,9 +264,9 @@ vendor/lib/libscveFaceRecognition.so|3474a3c1a6543b49f5cd899beee1ba423bad0830
 vendor/lib/libscveImageCorrection.so|5ba88d26a4561db304e9f2d59c0dfee9947d50b3
 vendor/lib/libscvePanorama.so|b6466d6f9231f9e2396233949a43e687f492e665
 vendor/lib/libscvePanorama_lite.so|8d873af0a63ca304863124d0bbfdb86d742d1b25
--vendor/lib/libts_face_beautify_hal.so|4b8700003fd32f5a6a650821b86ed33e73992d10
--vendor/lib/libts_detected_face_hal.so|247470e7610f93b0a21d943f5e47ab61a032b1e0
-vendor/lib/libvideobokeh.so|5abda9b5f2ce2565ff2089dac9d6c073d55c05ee
+-vendor/lib/libts_face_beautify_hal.so|5b2ffbbd2b03eb4b1b98d89c04bdd3873db4bb7f
+-vendor/lib/libts_detected_face_hal.so|356a49713693fa83d058e968c00d129d85c8acfb
+vendor/lib/libvideobokeh.so|9beb79afa8504ee04837a6135068afe9374b3615
 vendor/lib/libvideoutils.so|545de2533df92b15caec71ed0fd697201565007f
 
 # Camera actuators - from clover-user 8.1.0 OPM1.171019.019 9.8.29 release-keys
@@ -403,7 +403,7 @@ vendor/lib/libois_bu63165.so|77752254701047e7cc46121fd726bd0d9856799d
 vendor/lib/libois_lc898122.so|8b2933f549dcfefb6f438c12f6826aca2ddc2fc6
 
 # Camera sensors - from clover-user 8.1.0 OPM1.171019.019 9.8.29 release-keys
-vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
+vendor/lib/libchromaflash.so|8da6ba08dd23993eb248e566e365884c15d03c1b
 vendor/lib/libllvd_smore.so|740de4c339772df80858ddd9390f91ead71eadeb
 vendor/lib/libmmcamera_bokeh.so|8f47eb5b797c09a84755e19297ae6eac329442db
 vendor/lib/libmmcamera_chromaflash_lib.so|2ac15c08e7916b039b9d053a2d5c6846ed28ae41
@@ -458,11 +458,11 @@ vendor/lib/libmmcamera_llvd.so|6fca05767e27b9a5f0050fc9296069c09e9f5dba
 vendor/lib/libmmcamera_optizoom_lib.so|0d54dcba2f86236b66384aa83861693451ee0451
 vendor/lib/libmmcamera_stillmore_lib.so|d313da5abb76da8a4328d18e13aaa3f042f63e47
 vendor/lib/libmmcamera_trueportrait_lib.so|41f491298caf7ddd2fd19b9f71906fd9f2a826ff
-vendor/lib/libmmcamera_ubifocus_lib.so|204680decba87b04a2eb5ad4746e69f8e0c413bc
-vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
+vendor/lib/libmmcamera_ubifocus_lib.so|4257544aaaefa7400b7415f4c11337e09dfbf454
+vendor/lib/liboptizoom.so|f6898fd52dc9caa7626fd959a2df9faba5dbd529
 vendor/lib/libseemore.so|cd207541c3cdd97eb25ef2a9c63662054393e81f
-vendor/lib/libtrueportrait.so|b8e11c098bd859aae6c535cdb87e3e36f6b1c6ef
-vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
+vendor/lib/libtrueportrait.so|6aad0281ab7902e93f9dac430c8bff50aeee042c
+vendor/lib/libubifocus.so|36b90ab4196e71972d716149785142b4b9623536
 
 # Capability Configstore - from Honeywell/hon660/hon660:12/94.00.03/0037:user/release-keys
 -system_ext/framework/vendor.qti.hardware.capabilityconfigstore-V1.0-java.jar|17968ba47efae893689efba17b9d75a8b22bc68c
