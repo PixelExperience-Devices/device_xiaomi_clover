@@ -1,3 +1,0 @@
-init_daemon_domain(vendor_mutualex)
-
-allow vendor_mutualex self:socket create_socket_perms_no_ioctl;
