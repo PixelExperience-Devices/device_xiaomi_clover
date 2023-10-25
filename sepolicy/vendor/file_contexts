@@ -66,6 +66,9 @@
 # Lights
 /vendor/bin/hw/android\.hardware\.light-service\.xiaomi                                                                           u:object_r:hal_light_default_exec:s0
 
+# Metadata
+/dev/block/platform/soc/c0c4000\.sdhci/by-name/logdump                                                                            u:object_r:metadata_block_device:s0
+
 # Mlipay
 /(vendor|system/vendor)/bin/mlipayd@1.1         u:object_r:hal_mlipay_default_exec:s0
 
