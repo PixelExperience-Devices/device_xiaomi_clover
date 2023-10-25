@@ -203,9 +203,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# GMS
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
 # GPS / Location
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
