@@ -11,6 +11,7 @@ ro.config.vc_call_vol_steps=7
 gsm.version.baseband?=Wi-Fi Only
 
 # Bluetooth & FM
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 vendor.bluetooth.soc=cherokee
 bt.max.hfpclient.connections=1
 vendor.hw.fm.init=0
@@ -51,6 +52,7 @@ debug.cpurend.vsync=false
 debug.performance.tuning=1
 persist.demo.hdmirotationlock=false
 persist.hwc.enable_vds=1
+ro.hwui.render_ahead=20
 ro.qualcomm.cabl=0
 sdm.debug.disable_skip_validate=1
 

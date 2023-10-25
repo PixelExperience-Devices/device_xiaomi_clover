@@ -109,7 +109,6 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 persist.bluetooth.bluetooth_audio_hal.disabled=false
 ro.vendor.bluetooth.wipower=false
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
@@ -164,7 +163,6 @@ vendor.video.disable.ubwc=1
 debug.sf.auto_latch_unsignaled=true
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
-ro.hwui.render_ahead=20
 debug.renderengine.backend=skiaglthreaded
 
 # Fastbootd
