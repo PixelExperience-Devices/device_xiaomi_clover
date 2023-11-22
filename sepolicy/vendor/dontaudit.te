@@ -1,7 +1,3 @@
-# Apps are no longer allowed open access to /dev/ashmem, unless they
-# target API level < Q.
-dontaudit untrusted_app ashmem_device:chr_file open;
-
 dontaudit adbd self:capability sys_admin;
 dontaudit blkid self:capability sys_admin;
 dontaudit blkid_untrusted self:capability sys_admin;
@@ -29,6 +25,12 @@ dontaudit vendor_msm_irqbalanced self:capability sys_admin;
 dontaudit vendor_pd_mapper self:capability sys_admin;
 dontaudit vendor_toolbox self:capability sys_admin;
 dontaudit vold_prepare_subdirs self:capability sys_admin;
+
+dontaudit untrusted_app zygote:unix_stream_socket getopt;
+dontaudit untrusted_app_25 zygote:unix_stream_socket getopt;
+dontaudit untrusted_app_27 zygote:unix_stream_socket getopt;
+dontaudit untrusted_app_29 zygote:unix_stream_socket getopt;
+dontaudit untrusted_app_30 zygote:unix_stream_socket getopt;
 
 # Neverallow: no domain should be allowed to ptrace init 
 # at system/sepolicy/public/init.te
