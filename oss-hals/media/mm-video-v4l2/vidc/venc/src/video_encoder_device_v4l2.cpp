@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2010-2017, 2021 The Linux Foundation. All rights reserved.
+Copyright (c) 2010-2017, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -420,8 +420,6 @@ void* venc_dev::async_venc_message_thread (void *input)
 
                 if (v4l2_buf.flags & V4L2_BUF_FLAG_PFRAME) {
                     venc_msg.buf.flags |= OMX_VIDEO_PictureTypeP;
-                } else if (v4l2_buf.flags & V4L2_BUF_FLAG_BFRAME) {
-                    venc_msg.buf.flags |= OMX_VIDEO_PictureTypeB;
                 }
 
                 if (v4l2_buf.flags & V4L2_QCOM_BUF_FLAG_CODECCONFIG)
@@ -679,38 +677,6 @@ inline int get_yuv_size(unsigned long fmt, int width, int height) {
     return size;
 }
 
-void venc_dev::append_extradata_mbidata(OMX_OTHER_EXTRADATATYPE *p_extra,
-            struct msm_vidc_extradata_header *p_extradata)
-{
-    OMX_U32 payloadSize = append_mbi_extradata(&p_extra->data, p_extradata);
-    p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE) + payloadSize, 4);
-    p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
-    p_extra->nPortIndex = OMX_DirOutput;
-    p_extra->eType = (OMX_EXTRADATATYPE)OMX_ExtraDataVideoEncoderMBInfo;
-    p_extra->nDataSize = payloadSize;
-
-}
-
-void venc_dev::append_extradata_ltrinfo(OMX_OTHER_EXTRADATATYPE *p_extra,
-            struct msm_vidc_extradata_header *p_extradata)
-{
-    p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE) + p_extradata->data_size, 4);
-    p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
-    p_extra->nPortIndex = OMX_DirOutput;
-    p_extra->eType = (OMX_EXTRADATATYPE) OMX_ExtraDataVideoLTRInfo;
-    p_extra->nDataSize = p_extradata->data_size;
-    memcpy(p_extra->data, p_extradata->data, p_extradata->data_size);
-}
-
-void venc_dev::append_extradata_none(OMX_OTHER_EXTRADATATYPE *p_extra)
-{
-    p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE), 4);
-    p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
-    p_extra->nPortIndex = OMX_DirOutput;
-    p_extra->eType = OMX_ExtraDataNone;
-    p_extra->nDataSize = 0;
-}
-
 bool venc_dev::handle_input_extradata(struct v4l2_buffer buf)
 {
     OMX_OTHER_EXTRADATATYPE *p_extra = NULL;
@@ -957,14 +923,6 @@ bool venc_dev::handle_output_extradata(void *buffer, int index)
 {
     OMX_BUFFERHEADERTYPE *p_bufhdr = (OMX_BUFFERHEADERTYPE *) buffer;
     OMX_OTHER_EXTRADATATYPE *p_extra = NULL;
-    OMX_OTHER_EXTRADATATYPE *p_clientextra = NULL;
-    if(venc_handle->m_sExtraData) {
-        p_clientextra = (OMX_OTHER_EXTRADATATYPE * )
-            ((venc_handle->m_client_output_extradata_mem_ptr + index) ->pBuffer);
-    }
-    if (p_clientextra == NULL) {
-        DEBUG_PRINT_ERROR("Client Extradata buffers not allocated\n");
-    }
 
     if (!output_extradata_info.uaddr) {
         DEBUG_PRINT_ERROR("Extradata buffers not allocated\n");
@@ -994,27 +952,31 @@ bool venc_dev::handle_output_extradata(void *buffer, int index)
         switch (p_extradata->type) {
             case MSM_VIDC_EXTRADATA_METADATA_MBI:
             {
-                append_extradata_mbidata(p_extra, p_extradata);
-                if(p_clientextra) {
-                     append_extradata_mbidata(p_clientextra, p_extradata);
-                }
-                DEBUG_PRINT_LOW("MBI Extradata = 0x%x", *((OMX_U32 *)p_extra->data));
+                OMX_U32 payloadSize = append_mbi_extradata(&p_extra->data, p_extradata);
+                p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE) + payloadSize, 4);
+                p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
+                p_extra->nPortIndex = OMX_DirOutput;
+                p_extra->eType = (OMX_EXTRADATATYPE)OMX_ExtraDataVideoEncoderMBInfo;
+                p_extra->nDataSize = payloadSize;
                 break;
             }
             case MSM_VIDC_EXTRADATA_METADATA_LTR:
             {
-                append_extradata_ltrinfo(p_extra, p_extradata);
-                if(p_clientextra) {
-                    append_extradata_ltrinfo(p_clientextra, p_extradata);
-                }
+                p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE) + p_extradata->data_size, 4);
+                p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
+                p_extra->nPortIndex = OMX_DirOutput;
+                p_extra->eType = (OMX_EXTRADATATYPE) OMX_ExtraDataVideoLTRInfo;
+                p_extra->nDataSize = p_extradata->data_size;
+                memcpy(p_extra->data, p_extradata->data, p_extradata->data_size);
                 DEBUG_PRINT_LOW("LTRInfo Extradata = 0x%x", *((OMX_U32 *)p_extra->data));
                 break;
             }
             case MSM_VIDC_EXTRADATA_NONE:
-                append_extradata_none(p_extra);
-                if(p_clientextra) {
-                    append_extradata_none(p_clientextra);
-                }
+                p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE), 4);
+                p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
+                p_extra->nPortIndex = OMX_DirOutput;
+                p_extra->eType = OMX_ExtraDataNone;
+                p_extra->nDataSize = 0;
                 break;
             default:
                 /* No idea what this stuff is, just skip over it */
@@ -1024,9 +986,6 @@ bool venc_dev::handle_output_extradata(void *buffer, int index)
         }
 
         p_extra = (OMX_OTHER_EXTRADATATYPE *)(((char *)p_extra) + p_extra->nSize);
-        if(p_clientextra) {
-            p_clientextra = (OMX_OTHER_EXTRADATATYPE *)(((char *)p_clientextra) + p_clientextra->nSize);
-        }
     } while (p_extradata->type != MSM_VIDC_EXTRADATA_NONE);
 
     /* Just for debugging: Traverse the list of extra datas  and spit it out onto log */
@@ -1963,7 +1922,6 @@ bool venc_dev::venc_get_buf_req(OMX_U32 *min_buff_count,
         output_extradata_info.buffer_size = extra_data_size;
         output_extradata_info.count = m_sOutput_buff_property.actualcount;
         output_extradata_info.size = output_extradata_info.buffer_size * output_extradata_info.count;
-        venc_handle->m_client_out_extradata_info.set_extradata_info(extra_data_size,m_sOutput_buff_property.actualcount);
     }
 
     return true;
@@ -6263,10 +6221,6 @@ bool venc_dev::venc_calibrate_gop()
         return false;
     }
 
-    if (nBframes && !nPframes) {
-        DEBUG_PRINT_ERROR("nPframes should be non-zero when nBframes is non-zero\n");
-        return false;
-    }
 
     if (nLayers > 1) { /*Multi-layer encoding*/
         sub_gop_size = 1 << (nLayers - 1);
@@ -8096,7 +8050,16 @@ bool venc_dev::venc_validate_profile_level(OMX_U32 *eProfile, OMX_U32 *eLevel)
                                         MIN((unsigned int) (profile_tbl[5] / mb_per_frame), MAXDPB));
                         break;
                     } else {
+                        if(m_codec == OMX_VIDEO_CodingHEVC ||
+                           m_codec == OMX_VIDEO_CodingMPEG4) {
+                           if(*eLevel == profile_tbl[3])
                         new_level = (int)profile_tbl[3];
+                           else {
+                             new_level = (int)*eLevel;
+                           }
+                        } else {
+                            new_level = (int)profile_tbl[3];
+                        }
                         profile_level_found = true;
                         DEBUG_PRINT_LOW("Appropriate profile/level found %u/%u", (int) *eProfile, (int) new_level);
                         break;

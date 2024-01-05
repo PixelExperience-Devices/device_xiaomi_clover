@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2010-2017, 2021 The Linux Foundation. All rights reserved.
+Copyright (c) 2010-2017, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -569,7 +569,7 @@ class omx_video: public qc_omx_component
         virtual ~omx_video();  // destructor
 
         // virtual int async_message_process (void *context, void* message);
-        void process_event_cb(void *ctxt);
+        void process_event_cb(void *ctxt,unsigned char id);
 
         OMX_ERRORTYPE allocate_buffer(
                 OMX_HANDLETYPE hComp,
@@ -719,7 +719,8 @@ class omx_video: public qc_omx_component
                 OMX_PTR              appData,
                 void *               eglImage);
 
-        Signal signal;
+
+
         int  m_pipe_in;
         int  m_pipe_out;
 
@@ -728,6 +729,7 @@ class omx_video: public qc_omx_component
         bool async_thread_created;
         bool msg_thread_created;
         volatile bool msg_thread_stop;
+        volatile bool is_c2d_reqd;
 
         OMX_U8 m_nkind[128];
 
@@ -831,13 +833,9 @@ class omx_video: public qc_omx_component
         bool allocate_done(void);
         bool allocate_input_done(void);
         bool allocate_output_done(void);
-        bool allocate_output_extradata_done(void);
 
         OMX_ERRORTYPE free_input_buffer(OMX_BUFFERHEADERTYPE *bufferHdr);
         OMX_ERRORTYPE free_output_buffer(OMX_BUFFERHEADERTYPE *bufferHdr);
-        void free_output_extradata_buffer_header();
-
-        OMX_ERRORTYPE allocate_client_output_extradata_headers();
 
         OMX_ERRORTYPE allocate_input_buffer(OMX_HANDLETYPE       hComp,
                 OMX_BUFFERHEADERTYPE **bufferHdr,
@@ -863,13 +861,6 @@ class omx_video: public qc_omx_component
                 OMX_U8                *buffer);
 
         OMX_ERRORTYPE use_output_buffer(OMX_HANDLETYPE hComp,
-                OMX_BUFFERHEADERTYPE   **bufferHdr,
-                OMX_U32                port,
-                OMX_PTR                appData,
-                OMX_U32                bytes,
-                OMX_U8                 *buffer);
-
-        OMX_ERRORTYPE use_client_output_extradata_buffer(OMX_HANDLETYPE hComp,
                 OMX_BUFFERHEADERTYPE   **bufferHdr,
                 OMX_U32                port,
                 OMX_PTR                appData,
@@ -903,7 +894,6 @@ class omx_video: public qc_omx_component
 
         bool release_output_done();
         bool release_input_done();
-        bool release_output_extradata_done();
 
         OMX_ERRORTYPE send_command_proxy(OMX_HANDLETYPE  hComp,
                 OMX_COMMANDTYPE cmd,
@@ -940,8 +930,6 @@ class omx_video: public qc_omx_component
                         OMX_EventError,OMX_ErrorUnsupportedSetting,0,NULL);
             }
         }
-
-        client_extradata_info m_client_out_extradata_info;
 
         void complete_pending_buffer_done_cbs();
         bool is_conv_needed(int, int);
@@ -1061,8 +1049,6 @@ class omx_video: public qc_omx_component
         OMX_BUFFERHEADERTYPE *m_inp_mem_ptr;
         // Output memory pointer
         OMX_BUFFERHEADERTYPE *m_out_mem_ptr;
-        // Client extradata memory pointer
-        OMX_BUFFERHEADERTYPE  *m_client_output_extradata_mem_ptr;
         omx_cmd_queue m_opq_meta_q;
         omx_cmd_queue m_opq_pmem_q;
         OMX_BUFFERHEADERTYPE meta_buffer_hdr[MAX_NUM_INPUT_BUFFERS];
@@ -1081,8 +1067,6 @@ class omx_video: public qc_omx_component
         uint64_t m_client_out_bm_count;
         uint64_t m_client_in_bm_count;
         uint64_t m_inp_bm_count;
-        // bitmask array size for extradata
-        uint64_t m_out_extradata_bm_count;
         uint64_t m_flags;
         uint64_t m_etb_count;
         uint64_t m_fbd_count;
