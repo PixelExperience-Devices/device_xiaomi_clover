@@ -31,6 +31,7 @@ dontaudit untrusted_app_25 zygote:unix_stream_socket getopt;
 dontaudit untrusted_app_27 zygote:unix_stream_socket getopt;
 dontaudit untrusted_app_29 zygote:unix_stream_socket getopt;
 dontaudit untrusted_app_30 zygote:unix_stream_socket getopt;
+dontaudit untrusted_app_32 zygote:unix_stream_socket getopt;
 
 # Neverallow: no domain should be allowed to ptrace init 
 # at system/sepolicy/public/init.te
