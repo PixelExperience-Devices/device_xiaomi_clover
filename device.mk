@@ -532,6 +532,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     androidx.window.extensions
 
+$(call inherit-product-if-exists, vendor/xiaomi/clover-extra/gms-tablet.mk) 
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
