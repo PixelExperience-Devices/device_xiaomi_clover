@@ -18,3 +18,5 @@ dontaudit {
     sensors
     vendor_dpmd
 } diag_device:chr_file { read write };
+
+binder_call(rild, qtidataservices_app)
