@@ -9,10 +9,8 @@ PRODUCT_PACKAGES += vendor.display.config@1.0 \
                     vendor.qti.hardware.display.config-V3-ndk \
                     vendor.qti.hardware.display.config-V4-ndk \
                     vendor.qti.hardware.display.config-V5-ndk \
-                    vendor.qti.hardware.display.config-V6-ndk
-
-SOONG_CONFIG_NAMESPACES += qtiunifeddraw
-# Soong Keys
-SOONG_CONFIG_qtiunifeddraw := qtiunifeddraw_enabled
-# Soong Values
-SOONG_CONFIG_qtiunifeddraw_qtiunifeddraw_enabled := true
+                    vendor.qti.hardware.display.config-V6-ndk \
+                    vendor.qti.hardware.display.config-V7-ndk \
+                    vendor.qti.hardware.display.config-V8-ndk \
+                    vendor.qti.hardware.display.config-V9-ndk \
+                    vendor.qti.hardware.display.config-V10-ndk

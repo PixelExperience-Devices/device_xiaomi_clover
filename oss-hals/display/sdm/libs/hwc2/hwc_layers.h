@@ -94,6 +94,7 @@ class HWCLayer {
   void ResetValidation() { needs_validate_ = false; }
   bool NeedsValidation() { return (needs_validate_ || geometry_changes_); }
   bool IsNonIntegralSourceCrop() { return non_integral_source_crop_; }
+  bool IsScalingPresent();
 
  private:
   Layer *layer_ = nullptr;

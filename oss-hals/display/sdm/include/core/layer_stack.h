@@ -22,6 +22,13 @@
 * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ *
+ * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+ */
+
 /*! @file layer_stack.h
   @brief File for display layer stack structure which represents a drawing buffer.
 
@@ -254,6 +261,8 @@ struct LayerStackFlags {
       uint32_t hdr_present : 1;  //!< Set if stack has HDR content
 
       uint32_t fbt_valid : 1;    //!< Indicates whether valid fbt is set
+
+      uint32_t scaling_rgb_layer_present : 1;  //!< Set if scaling rgb layer is present
     };
 
     uint32_t flags = 0;               //!< For initialization purpose only.

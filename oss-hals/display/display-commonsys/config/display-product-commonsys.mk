@@ -1,5 +1,4 @@
 PRODUCT_PACKAGES += libdisplayconfig.system \
-                    libqdMetaData.system \
                     libgralloc.system.qti \
                     libdrm \
                     liblayerext.qti \
@@ -8,14 +7,21 @@ PRODUCT_PACKAGES += libdisplayconfig.system \
                     libdisplayconfig.system.qti
 
 SOONG_CONFIG_NAMESPACES += qtidisplaycommonsys
-SOONG_CONFIG_NAMESPACES += qtiunifeddraw
 # Soong Keys
-SOONG_CONFIG_qtidisplaycommonsys := displayconfig_enabled
-SOONG_CONFIG_qtiunifeddraw := qtiunifeddraw_enabled
+SOONG_CONFIG_qtidisplaycommonsys := displayextension composer3ext
 # Soong Values
-SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := false
-SOONG_CONFIG_qtiunifeddraw_qtiunifeddraw_enabled := true
+
+# displayextension controls global compile time disablement of SF extensions
+SOONG_CONFIG_qtidisplaycommonsys_displayextension := false
+
+# Variables can be added here on a transient basis to merge
+# features that are not yet consumed in keystone
+# Once the feature has been consumed, these can be removed
+# and the feature can be enabled/disabled at run time via android
+# properties
+SOONG_CONFIG_qtidisplaycommonsys_composer3ext := false
 
 ifeq ($(call is-vendor-board-platform,QCOM),true)
-    SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
+    SOONG_CONFIG_qtidisplaycommonsys_displayextension := true
+    SOONG_CONFIG_qtidisplaycommonsys_composer3ext := true
 endif

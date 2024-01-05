@@ -30,7 +30,7 @@
 /*
  * Changes from Qualcomm Innovation Center are provided under the following license:
  *
- * Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted (subject to the limitations in the
@@ -71,7 +71,7 @@
 namespace DisplayConfig {
 
 int ClientImpl::Init(std::string client_name, ConfigCallback *callback) {
-  display_config_ = IDisplayConfig::getService();
+  display_config_ = IDisplayConfig::tryGetService();
   // Unable to find Display Config 2.0 service. Fail Init.
   if (!display_config_) {
     return -1;
@@ -1172,69 +1172,6 @@ int ClientImpl::SetPanelBrightnessTiled(uint64_t physical_disp_id, uint32_t leve
 
   display_config_->perform(client_handle_, kSetPanelBrightnessTiled, input_params, {}, hidl_cb);
 
-  return error;
-}
-
-int ClientImpl::tunnellingInit() {
-  int error = 0;
-  auto hidl_cb = [&error] (int32_t err, ByteStream params, HandleStream handles) {
-    error = err;
-  };
-
-  display_config_->perform(client_handle_, kTunnellingInit, {}, {}, hidl_cb);
-  return error;
-}
-
-int ClientImpl::queueTunnelledBuffer(const native_handle_t *buffer_handle,
-                                     const native_handle_t* acquire_fence_handle)
-{
-  hidl_handle handle = buffer_handle;
-  std::vector<hidl_handle> handle_vector;
-  handle_vector.push_back(buffer_handle);
-  HandleStream input_handles = handle_vector;
-  ByteStream input_params;
-  input_params.setToExternal(reinterpret_cast<uint8_t*>(&acquire_fence_handle),
-                             sizeof(native_handle_t*));
-
-  int error = 0;
-  auto hidl_cb = [&error] (int32_t err, ByteStream params, HandleStream handles) {
-    error = err;
-  };
-
-  display_config_->perform(client_handle_, kQueueTunneledBuffer, input_params,
-                           input_handles, hidl_cb);
-  return error;
-}
-
-
-int ClientImpl::dequeueTunnelledBuffer(const native_handle_t* buffer_handle,
-                                       const native_handle_t* release_fence_handle)
-{
-  hidl_handle handle = buffer_handle;
-  std::vector<hidl_handle> handle_vector;
-  handle_vector.push_back(buffer_handle);
-  HandleStream input_handles = handle_vector;
-  ByteStream input_params;
-  input_params.setToExternal(reinterpret_cast<uint8_t*>(&release_fence_handle),
-                             sizeof(native_handle_t*));
-
-  int error = 0;
-  auto hidl_cb = [&error] (int32_t err, ByteStream params, HandleStream handles) {
-    error = err;
-  };
-
-  display_config_->perform(client_handle_, kDequeueTunneledBuffer,input_params,
-                           input_handles, hidl_cb);
-  return error;
-}
-
-int ClientImpl::tunnellingDeinit() {
-  int error = 0;
-  auto hidl_cb = [&error] (int32_t err, ByteStream params, HandleStream handles) {
-    error = err;
-  };
-
-  display_config_->perform(client_handle_, kTunnellingDeinit, {}, {}, hidl_cb);
   return error;
 }
 
