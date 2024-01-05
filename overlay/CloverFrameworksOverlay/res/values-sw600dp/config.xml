@@ -24,6 +24,7 @@
     <!-- ComponentNames of the dreams that we should hide -->
     <string-array name="config_disabledDreamComponents">
         <item>com.google.android.apps.photos/.daydream.PhotosDreamService</item>
+        <item>com.google.assistant.hubui/com.google.assistant.hubui.dream.CuratedPhotoDreamService</item>
     </string-array>
 
     <!-- The list of supported dream complications -->
