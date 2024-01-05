@@ -76,9 +76,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String HALL_WAKEUP_PROP = "persist.service.folio_daemon";
 
     private static final String DEVICE_DOZE_PACKAGE_NAME = "com.advanced.settings.doze";
-
-    private static final String DEVICE_JASON_PACKAGE_NAME = "org.lineageos.settings.devicex";
-    private static final String PREF_DEVICE_JASON = "device_jason";
     
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
     private Preference mClearSpeakerPref;
@@ -141,10 +138,6 @@ public class DeviceSettings extends PreferenceFragment implements
         // Doze
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
-        }
-        // Jason Settings
-        if (isAppNotInstalled(DEVICE_JASON_PACKAGE_NAME)) {
-            displayCategory.removePreference(findPreference(PREF_DEVICE_JASON));
         }
         //FPS Info
         SecureSettingSwitchPreference fpsInfo = (SecureSettingSwitchPreference) findPreference(PREF_KEY_FPS_INFO);
