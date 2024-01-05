@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">平板擴展</string>
+    <string name="volume_panel_trigger_title">音量面板</string>
+
+    <string name="category_battery">電源</string>
+    <string name="pref_battery">電池</string>
+    <string name="pref_battery_summary">電池管理系統</string>
+
+    <string name="bms_category_step_charging">階梯充電</string>
+    <string name="bms_step_charging_switch">開啓階梯充電</string>
+    <string name="bms_step_charging_switch_summary">自動根據電池電壓及溫度調整充電速度以保護電池</string>
+    <string name="bms_category_charge_limiter">充電限制器</string>
+    <string name="bms_charge_limiter_notice">注意</string>
+    <string name="bms_charge_limiter_description">如果你需要打開任何充電限制器選項，建議關閉“熒幕 - 接上或移除電源時喚醒熒幕”，不然你可能會在充電期間觸發一些意外喚醒</string>
+    <string name="bms_always_connected_mode">持續充電模式</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">將電量限制在40%-60%以保護電池</string>
+    <string name="bms_limit_to_eighty" formatted="false">限制最高電量在80%左右</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">電量在80%左右時停止充電以保護電池(持續模式優先)</string>
+    <string name="bms_category_charge_limiter_helper">充電限制器 - 額外</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">關閉連接電源時圓形動畫</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">提高充電限制器體驗(需要重啓系統以生效)</string>
+</resources>

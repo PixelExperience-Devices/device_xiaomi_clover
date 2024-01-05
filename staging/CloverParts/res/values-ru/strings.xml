@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 hackruu <hackru@gmail.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Дополнительные настройки Clover</string>
+    <string name="volume_panel_trigger_title">Панель громкости</string>
+
+    <string name="category_battery">Зарядка аккумулятора</string>
+    <string name="pref_battery">Аккумулятор</string>
+    <string name="pref_battery_summary">Система управления зарядом аккумулятора</string>
+
+    <string name="bms_category_step_charging">Пошаговая зарядка</string>
+    <string name="bms_step_charging_switch">Включить пошаговую зарядку</string>
+    <string name="bms_step_charging_switch_summary">Автоматически настраивать скорость заряда в зависимости от показаний аккумулятора(напряжение и температура) для защиты аккумулятора</string>
+    <string name="bms_category_charge_limiter">Ограничитель заряда</string>
+    <string name="bms_charge_limiter_notice">Уведомление</string>
+    <string name="bms_charge_limiter_description">При включении любого ограничителя стоит отключить пробуждение экрана от подключения кабеля зарядки, иначе экран может самопроизвольно загораться во время зарядки</string>
+    <string name="bms_always_connected_mode">Режим «Всегда на зарядке»</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Ограничить уровень заряда аккумулятора между 40% и 60% для защиты аккумулятора</string>
+    <string name="bms_limit_to_eighty" formatted="false">Ограничить заряд до 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Отключить процесс заряда аккумулятора при достижении 80% заряда для защиты аккумулятора (Режим «Всегда на зарядке» имеет больший приоритет)</string>
+    <string name="bms_category_charge_limiter_helper">Дополнительные настройки ограничителя</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Отключить анимацию в виде ряби</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Отключение анимации позволяет получить лучшее впечатления от использования ограничителя (Для применения необходима перезагрузка)</string>
+</resources>

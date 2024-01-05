@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 Maximilian Swag
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Impostazioni aggiuntive Clover</string>
+    <string name="volume_panel_trigger_title">Pannello del volume</string>
+
+    <string name="category_battery">Alimentazione elettrica</string>
+    <string name="pref_battery">Batteria</string>
+    <string name="pref_battery_summary">Sistema di gestione della batteria</string>
+
+    <string name="bms_category_step_charging">Ricarica graduale</string>
+    <string name="bms_step_charging_switch">Abilita la ricarica graduale</string>
+    <string name="bms_step_charging_switch_summary">La regolazione automatica della velocità di carica dipende dai dati della batteria (tensione/temperatura) per proteggere la batteria</string>
+    <string name="bms_category_charge_limiter">Limitatore di carica</string>
+    <string name="bms_charge_limiter_notice">Avviso</string>
+    <string name="bms_charge_limiter_description">Se attivi un\'opzione di limitazione della carica, è meglio disattivare “Display - Risveglia al collegamento” o potresti ricevere risvegli imprevisti durante il controllo della carica</string>
+    <string name="bms_always_connected_mode">Modalità sempre connesso</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Limita la percentuale della batteria tra il 40% e il 60% per proteggere la batteria</string>
+    <string name="bms_limit_to_eighty" formatted="false">Limite a circa l\'80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Sospendi la ricarica quando la percentuale è intorno all\'80% per proteggere la batteria (la modalità Sempre connesso farà sì che ciò non accada mai)</string>
+    <string name="bms_category_charge_limiter_helper">Limitatore di carica aggiuntivo</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Disabilita l\'animazione del\'ondulazione della carica</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Aiuta a ottenere una migliore esperienza per il limitatore di carica (richiede un riavvio per avere effetto)</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 pix106 <sbordenave@gmail.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Clover Parts</string>
+    <string name="volume_panel_trigger_title">Panneau de volume</string>
+
+    <string name="category_battery">Alimentation</string>
+    <string name="pref_battery">Batterie</string>
+    <string name="pref_battery_summary">Système de gestion de la batterie</string>
+
+    <string name="bms_category_step_charging">Charge par palier</string>
+    <string name="bms_step_charging_switch">Activer la charge par palier</string>
+    <string name="bms_step_charging_switch_summary">Ajuste automatiquement la vitesse de charge en fonction des données de la batterie (voltage/température) pour la protéger</string>
+    <string name="bms_category_charge_limiter">Limiteur de charge</string>
+    <string name="bms_charge_limiter_notice">Attention</string>
+    <string name="bms_charge_limiter_description">Si vous activez une option qui limite la charge, vous devriez désactiver l\'option \"Réveiller au branchement\" pour éviter des réveils inattendus lors du contrôle de la charge</string>
+    <string name="bms_always_connected_mode">Mode toujours branché</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Limiter le pourcentage entre 40% and 60% pour protéger la batterie</string>
+    <string name="bms_limit_to_eighty" formatted="false">Limiter autour de 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Arrêter la charge quand le pourcentage est autour de 80% pour protéger la batterie (le mode toujours branché fait que cela n\'arrivera jamais)</string>
+    <string name="bms_category_charge_limiter_helper">Limiteur de charge additionnel</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Désactiver l\'animation au branchement</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Améliore le limiteur de charge (nécessite un redémarrage pour prendre effet)</string>
+</resources>

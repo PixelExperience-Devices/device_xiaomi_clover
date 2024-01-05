@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 kamvrosidis <amkirk94@yahoo.gr>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Clover Parts</string>
+    <string name="volume_panel_trigger_title">Πίνακας Ρυθμίσεων Έντασης</string>
+
+    <string name="category_battery">Τροφοδοσία Ρεύματος</string>
+    <string name="pref_battery">Μπαταρία</string>
+    <string name="pref_battery_summary">Σύστημα διαχείρισης μπαταρίας</string>
+
+    <string name="bms_category_step_charging">Βηματική φόρτιση</string>
+    <string name="bms_step_charging_switch">Ενεργοποίηση βηματικής φόρτισης</string>
+    <string name="bms_step_charging_switch_summary">Αυτόματη προσαρμογή ταχύτητας φόρτισης ανάλογα με τα δεδομένα της μπαταρίας (τάση/θερμοκρασία) για προστασία της μπαταρίας</string>
+    <string name="bms_category_charge_limiter">Περιορισμένη φόρτιση</string>
+    <string name="bms_charge_limiter_notice">Ειδοποίηση</string>
+    <string name="bms_charge_limiter_description">Εάν ενεργοποιήσετε οποιαδήποτε ρύθμιση περιορισμού φόρτισης, καλύτερα να απενεργοποιήσετε την επιλογή “Προβολή - Αφύπνιση κατά τη σύνδεση” αλλιώς υπάρχει περίπτωση η οθόνη να ενεργοποιείται κατά την διάρκεια του ελέγχου φόρτισης</string>
+    <string name="bms_always_connected_mode">Πάντα συνδεμένο</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Περιορισμός του ποσοστού της μπαταρίας μεταξύ 40% και 60% για προστασία της μπαταρίας</string>
+    <string name="bms_limit_to_eighty" formatted="false">Περιορισμός γύρω στο 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Παύση φόρτισης όταν το ποσοστό είναι γύρω στο 80% για προστασία της μπαταρίας (Η επιλογή πάντα συνδεμένο θα κάνει αυτήν την επιλογή αδύνατη)</string>
+    <string name="bms_category_charge_limiter_helper">Βοηθός περιοριστή φόρτισης</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Απενεργοποίηση του εφέ κυματισμού κατά την φόρτιση</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Βοηθά στο να έχετε μία καλύτερη εμπειρία κατά τον περιορισμό φόρτισης (Απαιτεί επανεκκίνηση)</string>
+</resources>

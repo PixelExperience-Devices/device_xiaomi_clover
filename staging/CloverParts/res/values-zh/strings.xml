@@ -33,6 +33,6 @@
     <string name="bms_limit_to_eighty" formatted="false">限制最高电量为80%左右</string>
     <string name="bms_limit_to_eighty_summary" formatted="false">电量在80%左右时停止充电以保护电池(持续模式优先)</string>
     <string name="bms_category_charge_limiter_helper">充电限制器 - 额外</string>
-    <string name="bms_disable_charging_ripple_effect" formatted="false">关闭充电圆形动画</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">关闭插入充电器时的圆形动画</string>
     <string name="bms_disable_charging_ripple_effect_summary" formatted="false">提高充电限制器体验(需要重启系统以生效)</string>
 </resources>

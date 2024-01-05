@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 SBWater <136105193+sbsoda@users.noreply.github.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Clover Parts</string>
+    <string name="volume_panel_trigger_title">音量</string>
+
+    <string name="category_battery">電源管理</string>
+    <string name="pref_battery">バッテリー</string>
+    <string name="pref_battery_summary">バッテリー管理システム</string>
+
+    <string name="bms_category_step_charging">ステップ充電</string>
+    <string name="bms_step_charging_switch">ステップ充電を使用する</string>
+    <string name="bms_step_charging_switch_summary">バッテリーの状態（電圧/温度）に応じて充電速度を自動で調整し、バッテリーの劣化を抑えます</string>
+    <string name="bms_category_charge_limiter">充電リミッター</string>
+    <string name="bms_charge_limiter_notice">注意事項</string>
+    <string name="bms_charge_limiter_description">充電リミッターをONにした場合は[ディスプレイ - 電源接続時にスリープ解除]をOFFにした方がよいでしょう。充電制御による復帰を防ぐことができます。</string>
+    <string name="bms_always_connected_mode">常時接続モード</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">バッテリーを保護するため、充電率を40%から60%の間に制限します</string>
+    <string name="bms_limit_to_eighty" formatted="false">80%に制限する</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">バッテリーを保護するため、約80％で充電を一時停止します（常時接続モードでは動作しません）</string>
+    <string name="bms_category_charge_limiter_helper">充電リミッター支援</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">充電開始時のアニメーションを無効化</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">充電リミッターとの併用をおすすめします(再起動が必要)</string>
+</resources>

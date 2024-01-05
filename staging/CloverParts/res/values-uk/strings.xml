@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+     Copyright (C) 2023 CakesTwix <oleg.kiryazov@gmail.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Додаткові налаштування планшета</string>
+    <string name="volume_panel_trigger_title">Панель гучності</string>
+    <string name="category_battery">Електрохарчування</string>
+    <string name="pref_battery">Акумулятор</string>
+    <string name="pref_battery_summary">Система управління акумулятором</string>
+    <string name="bms_category_step_charging">Поетапна зарядка</string>
+    <string name="bms_step_charging_switch">Увімкнути поетапне живлення</string>
+    <string name="bms_step_charging_switch_summary">Автоматично налаштовувати швидкість заряду залежно від показників акумулятора (напруга/температура) для надійного використання акумулятора</string>
+    <string name="bms_category_charge_limiter">Обмежувач заряду</string>
+    <string name="bms_charge_limiter_notice">Зверніть увагу</string>
+    <string name="bms_charge_limiter_description">Під час увімкнення будь-якого обмежувача варто вимкнути пробудження екрана від під\'єднання кабелю заряджання, інакше екран може мимовільно загорятися під час заряджання</string>
+    <string name="bms_always_connected_mode">Режим \"Завжди на зарядці\"</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Обмежити відсоток заряду акумулятора між 40% і 60% для захисту акумулятора</string>
+    <string name="bms_limit_to_eighty" formatted="false">Обмежити приблизно до 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Призупинити живлення, коли відсоток зарядки становить близько 80%, щоб захистити акумулятор (Режим \"Завжди на зарядці\" не дозволить цьому статися)</string>
+    <string name="bms_category_charge_limiter_helper">Асистент обмежувача заряду</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Вимкнути анімацію у вигляді ряби</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Допомагає отримати кращий досвід роботи з обмежувачем заряду (Для набуття чинності потрібне перезавантаження)</string>
+</resources>
