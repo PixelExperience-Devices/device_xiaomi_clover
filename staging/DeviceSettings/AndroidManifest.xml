@@ -93,6 +93,12 @@
             android:name=".NoticeActivity"
             android:label="@string/pref_first_ref" />
 
+        <activity
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:name=".Notice202307UpdateActivity"
+            android:label="@string/pref_update_2023_07_title" />
+
         <service
             android:name=".FPSInfoService"
             android:exported="true">

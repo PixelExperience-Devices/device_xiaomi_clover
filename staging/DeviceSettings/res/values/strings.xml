@@ -19,6 +19,11 @@
 
     <string name="display_title">Display</string>
 
+    <string name="pref_update_2023_07_title">Update 2023.7 QPR3 NOTICE</string>
+    <string name="pref_update_2023_07_message">
+        --
+    </string>
+
     <!-- KCal -->
     <string name="device_kcal_title">Display Color Calibration</string>
 

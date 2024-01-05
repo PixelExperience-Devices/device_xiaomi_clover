@@ -114,6 +114,15 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     context.startActivity(intent1);
                 }
             }
+            
+            boolean update_2023_07_shown = (boolean) sharedPreferenceUtil.get(context, "update_2023_07_shown",
+                    true);
+
+            if(!update_2023_07_shown) {
+                Intent intent2 = new Intent(context, Notice202307UpdateActivity.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent2);
+            }
         }
     }
 }
