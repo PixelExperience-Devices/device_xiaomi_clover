@@ -2,18 +2,18 @@
   {
     "repository": "kernel_xiaomi_clover",
     "target_path": "kernel/xiaomi/clover",
-    "branch": "thirteen"
+    "branch": "thirteen-plus"
   },
   { 
     "repository": "vendor_xiaomi_clover",
     "target_path": "vendor/xiaomi/clover",
-    "branch": "thirteen",
+    "branch": "thirteen-plus",
     "remote": "pixel-devices-blobs"
   },
   { 
     "repository": "vendor_xiaomi_clover-extra",
     "target_path": "vendor/xiaomi/clover-extra",
-    "branch": "thirteen",
+    "branch": "thirteen-plus",
     "remote": "pixel-devices-blobs"
   }
 ]
