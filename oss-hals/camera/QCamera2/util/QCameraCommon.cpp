@@ -35,9 +35,9 @@
 #include <utils/Errors.h>
 #include <stdlib.h>
 #include <string.h>
-#include <utils/Log.h>
 #include <math.h>
 #include <fcntl.h>
+#include <log/log.h>
 
 // Camera dependencies
 #include "QCameraCommon.h"

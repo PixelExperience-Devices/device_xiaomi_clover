@@ -89,7 +89,7 @@
 #define MAX_AF_STATS_DATA_SIZE  1000
 #define MAX_ASD_STATS_DATA_SIZE 1000
 
-#define MAX_CAPTURE_BATCH_NUM 120
+#define MAX_CAPTURE_BATCH_NUM 32
 
 #define TUNING_DATA_VERSION        6
 #define TUNING_SENSOR_DATA_MAX     0x10000 /*(need value from sensor team)*/
@@ -1042,7 +1042,6 @@ typedef enum {
     IS_TYPE_GA_DIS,
     IS_TYPE_EIS_2_0,
     IS_TYPE_EIS_3_0,
-    IS_TYPE_VENDOR_EIS,
     IS_TYPE_MAX
 } cam_is_type_t;
 
@@ -2528,13 +2527,6 @@ typedef enum {
     CAM_INTF_PARM_BOKEH_MODE,
     CAM_INTF_META_SEND_IMMEDIATELY,
     CAM_INTF_PARAM_COUNTER,
-    XIAOMI_01,
-    XIAOMI_02,
-    XIAOMI_03,
-    XIAOMI_04,
-    XIAOMI_05,
-    XIAOMI_06,
-    XIAOMI_07,
     CAM_INTF_PARM_MAX
 } cam_intf_parm_type_t;
 
@@ -2773,7 +2765,6 @@ typedef struct {
 #define CAM_QTI_FEATURE_DEPTH_MAP       ((cam_feature_mask_t)1UL<<47)
 #define CAM_QTI_FEATURE_MFPROC_PRECPP   ((cam_feature_mask_t)1UL<<48)
 #define CAM_QTI_FEATURE_MFPROC_POSTCPP   ((cam_feature_mask_t)1UL<<49)
-#define CAM_QTI_FEATURE_VENDOR_EIS      ((cam_feature_mask_t)1UL<<50)
 #define CAM_QCOM_FEATURE_PP_SUPERSET    (CAM_QCOM_FEATURE_DENOISE2D|CAM_QCOM_FEATURE_CROP|\
                                          CAM_QCOM_FEATURE_ROTATION|CAM_QCOM_FEATURE_SHARPNESS|\
                                          CAM_QCOM_FEATURE_SCALE|CAM_QCOM_FEATURE_CAC|\
@@ -3175,11 +3166,6 @@ typedef enum {
     CAM_HAL3_JPEG_TYPE_MAX
 } cam_hal3_JPEG_type_t;
 
-typedef struct {
-    int32_t width;
-    int32_t height;
-    int32_t opClock;
-} cam_sensor_config_t;
 
 typedef struct {
     uint32_t sensorW;

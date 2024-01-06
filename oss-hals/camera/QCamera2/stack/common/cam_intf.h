@@ -1098,7 +1098,7 @@ typedef struct {
     INCLUDE(CAM_INTF_PARM_SET_VFE_COMMAND,              tune_cmd_t,                  1);
     INCLUDE(CAM_INTF_PARM_SET_PP_COMMAND,               tune_cmd_t,                  1);
     INCLUDE(CAM_INTF_PARM_MAX_DIMENSION,                cam_dimension_t,             1);
-    INCLUDE(CAM_INTF_PARM_RAW_DIMENSION,                cam_sensor_config_t,         1);
+    INCLUDE(CAM_INTF_PARM_RAW_DIMENSION,                cam_dimension_t,             1);
     INCLUDE(CAM_INTF_PARM_TINTLESS,                     int32_t,                     1);
     INCLUDE(CAM_INTF_PARM_WB_MANUAL,                    cam_manual_wb_parm_t,        1);
     INCLUDE(CAM_INTF_PARM_CDS_MODE,                     int32_t,                     1);
@@ -1194,12 +1194,6 @@ typedef struct {
     INCLUDE(CAM_INTF_PARM_BOKEH_MODE,                   uint8_t,                     1);
     INCLUDE(CAM_INTF_META_SEND_IMMEDIATELY,             uint8_t,                     1);
     INCLUDE(CAM_INTF_PARAM_COUNTER,                     uint32_t,                    1);
-    INCLUDE(XIAOMI_01,                                  uint32_t,                    1);
-    INCLUDE(XIAOMI_02,                                  uint32_t,                    1);
-    INCLUDE(XIAOMI_03,                                  uint32_t,                    1);
-    INCLUDE(XIAOMI_04,                                  uint32_t,                    1);
-    INCLUDE(XIAOMI_05,                                  uint32_t,                    1);
-    INCLUDE(XIAOMI_06,                                  uint32_t,                    1);
 } metadata_data_t;
 
 /* Update clear_metadata_buffer() function when a new is_xxx_valid is added to
