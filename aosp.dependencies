@@ -2,7 +2,7 @@
   {
     "repository": "kernel_xiaomi_clover",
     "target_path": "kernel/xiaomi/clover",
-    "branch": "thirteen-plus"
+    "branch": "thirteen-plus-wip"
   },
   { 
     "repository": "vendor_xiaomi_clover",
